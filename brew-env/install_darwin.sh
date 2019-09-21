@@ -1,5 +1,8 @@
 #!/bin/bash
 
+brew cask
+brew tap caskroom/versions
+
 brew install \
 	zsh \
 	mobile-shell \
@@ -59,3 +62,19 @@ brew install \
 	exiftool \
 	ext4fuse \
 	flac
+
+brew cask install \
+	alfred \
+	dropbox \
+	bartender \
+	google-chrome \
+	firefox \
+	iterm2 \
+	macdown \
+	coconutbattery \
+	java8 \
+	shimo \
+	istat-menus \
+	onyx \
+	wireshark \
+	visual-studio-code
