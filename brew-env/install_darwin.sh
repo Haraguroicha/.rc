@@ -77,4 +77,5 @@ brew cask install \
 	istat-menus \
 	onyx \
 	wireshark \
-	visual-studio-code
+	visual-studio-code \
+	WebPQuickLook
