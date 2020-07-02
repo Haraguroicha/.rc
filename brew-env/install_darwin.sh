@@ -4,6 +4,7 @@ brew cask
 #brew tap caskroom/versions
 brew tap homebrew/cask-versions
 brew tap heroku/brew
+brew tap homebrew/cask-fonts
 
 brew cask install osxfuse
 
@@ -84,4 +85,5 @@ brew cask install \
 	visual-studio-code \
 	WebPQuickLook \
 	1password \
-	gpg-suite-no-mail
+	gpg-suite-no-mail \
+	font-hack-nerd-font
