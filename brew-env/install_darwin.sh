@@ -92,4 +92,5 @@ brew cask install \
 	mattermost \
 	discord \
 	macpass \
+	iina \
 	intel-power-gadget
