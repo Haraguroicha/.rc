@@ -10,6 +10,7 @@ brew cask install osxfuse
 
 brew install \
 	zsh \
+	coreutils \
 	mobile-shell \
 	mtr \
 	nmap \
