@@ -86,4 +86,7 @@ brew cask install \
 	WebPQuickLook \
 	1password \
 	gpg-suite-no-mail \
-	font-hack-nerd-font
+	font-hack-nerd-font \
+	mattermost \
+	discord \
+	macpass
