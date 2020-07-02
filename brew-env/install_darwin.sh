@@ -89,4 +89,5 @@ brew cask install \
 	font-hack-nerd-font \
 	mattermost \
 	discord \
-	macpass
+	macpass \
+	intel-power-gadget
