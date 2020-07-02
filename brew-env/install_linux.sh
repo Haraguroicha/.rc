@@ -51,6 +51,7 @@ brew install \
 	irssi \
 	influxdb \
 	hugo \
+	heroku \
 	go \
 	gnutls \
 	gettext \

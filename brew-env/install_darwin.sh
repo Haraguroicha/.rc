@@ -1,7 +1,11 @@
 #!/bin/bash
 
 brew cask
-brew tap caskroom/versions
+#brew tap caskroom/versions
+brew tap homebrew/cask-versions
+brew tap heroku/brew
+
+brew cask install osxfuse
 
 brew install \
 	zsh \
@@ -61,7 +65,8 @@ brew install \
 	heroku heroku-node \
 	exiftool \
 	ext4fuse \
-	flac
+	flac \
+	gnupg
 
 brew cask install \
 	alfred \
@@ -72,10 +77,11 @@ brew cask install \
 	iterm2 \
 	macdown \
 	coconutbattery \
-	java8 \
 	shimo \
 	istat-menus \
 	onyx \
 	wireshark \
 	visual-studio-code \
-	WebPQuickLook
+	WebPQuickLook \
+	1password \
+	gpg-suite-no-mail
