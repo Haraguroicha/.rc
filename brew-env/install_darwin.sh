@@ -68,7 +68,8 @@ brew install \
 	exiftool \
 	ext4fuse \
 	flac \
-	gnupg
+	gnupg \
+	cocoapods
 
 brew cask install \
 	alfred \
