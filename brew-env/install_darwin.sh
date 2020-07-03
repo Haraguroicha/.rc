@@ -97,4 +97,5 @@ brew cask install \
 	macpass \
 	iina \
 	google-drive-file-stream \
+	parallels \
 	intel-power-gadget
