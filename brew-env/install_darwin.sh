@@ -10,6 +10,7 @@ brew cask install osxfuse
 
 brew install \
 	zsh \
+	most \
 	coreutils \
 	mobile-shell \
 	mtr \
@@ -69,6 +70,8 @@ brew install \
 	ext4fuse \
 	flac \
 	gnupg \
+	gnupg2 \
+	pinentry-mac \
 	cocoapods
 
 brew cask install \
@@ -93,4 +96,5 @@ brew cask install \
 	discord \
 	macpass \
 	iina \
+	google-drive-file-stream \
 	intel-power-gadget
