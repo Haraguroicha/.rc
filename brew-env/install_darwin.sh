@@ -98,4 +98,5 @@ brew cask install \
 	iina \
 	google-drive-file-stream \
 	parallels \
+	adobe-creative-cloud \
 	intel-power-gadget
