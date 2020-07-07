@@ -99,4 +99,5 @@ brew cask install \
 	google-drive-file-stream \
 	parallels \
 	adobe-creative-cloud \
+	telegram telegram-desktop \
 	intel-power-gadget
