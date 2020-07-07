@@ -100,4 +100,5 @@ brew cask install \
 	parallels \
 	adobe-creative-cloud \
 	telegram telegram-desktop \
+	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
 	intel-power-gadget
