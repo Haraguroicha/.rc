@@ -65,6 +65,7 @@ brew install \
 	screenresolution \
 	opus \
 	lzo \
+	vault \
 	heroku heroku-node \
 	exiftool \
 	ext4fuse \
