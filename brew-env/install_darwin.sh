@@ -102,4 +102,6 @@ brew cask install \
 	adobe-creative-cloud \
 	telegram telegram-desktop \
 	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
-	intel-power-gadget
+	intel-power-gadget \
+	font-jf-open-huninn
+
