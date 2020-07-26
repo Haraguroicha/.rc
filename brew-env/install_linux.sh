@@ -10,6 +10,7 @@ brew install \
 	zsh \
 	tmux \
 	util-linux \
+	ncdu \
 	vault \
 	webp \
 	x264 \

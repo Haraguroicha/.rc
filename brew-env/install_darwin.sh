@@ -12,6 +12,7 @@ brew install \
 	zsh \
 	most \
 	coreutils \
+	ncdu \
 	mobile-shell \
 	mtr \
 	nmap \
