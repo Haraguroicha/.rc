@@ -5,6 +5,7 @@ brew cask
 brew tap homebrew/cask-versions
 brew tap heroku/brew
 brew tap homebrew/cask-fonts
+brew tap gcenx/wine
 
 brew cask install osxfuse
 
@@ -103,6 +104,6 @@ brew cask install \
 	adobe-creative-cloud \
 	telegram telegram-desktop \
 	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
+	unofficial-wineskin \
 	intel-power-gadget \
 	font-jf-open-huninn
-
