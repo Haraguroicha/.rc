@@ -10,10 +10,10 @@ brew analytics off
 
 case $OSTYPE in
 	Darwin)
-	./install_darwin.sh
+	./_darwin.sh
 	;;
 	Linux)
-	./install_linux.sh
+	./_linux.sh
 	;;
 	*)
 	echo "Not impletement"
