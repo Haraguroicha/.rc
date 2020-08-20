@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ `where mas > /dev/null && echo $? || echo $?` -eq 0 ]] || (echo "mas not found, please install by \`brew install mas\` first" && exit 1)
+
 i () {
 	id="$1"
 	name="$2"
