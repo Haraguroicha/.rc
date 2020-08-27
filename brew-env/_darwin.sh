@@ -108,4 +108,5 @@ brew cask install \
 	unofficial-wineskin \
 	nrlquaker-winbox \
 	intel-power-gadget \
+	android-platform-tools \
 	font-jf-open-huninn
