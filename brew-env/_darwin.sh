@@ -106,5 +106,6 @@ brew cask install \
 	telegram telegram-desktop \
 	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
 	unofficial-wineskin \
+	nrlquaker-winbox \
 	intel-power-gadget \
 	font-jf-open-huninn
