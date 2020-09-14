@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OSTYPE=`uname`
+OSTYPE=$(uname)
 
 cd "$(realpath $(dirname "$0"))"
 
