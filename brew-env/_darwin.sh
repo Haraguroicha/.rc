@@ -19,6 +19,7 @@ brew install \
 	nmap \
 	pyenv \
 	go \
+	govc \
 	tmux \
 	git \
 	tree \
