@@ -1,17 +1,25 @@
 #!/bin/bash
 
 brew install \
-	adoptopenjdk \
-	dialog \
 	gcc \
-	opus \
+	util-linux \
+	thefuck \
+	nano \
+	htop \
+	jq \
 	yq \
+	vault \
+	tmux \
+	mtr \
+	dialog \
+	go \
+	hugo \
+	goenv \
+	adoptopenjdk \
+	opus \
 	zlib \
 	zsh \
-	tmux \
-	util-linux \
 	ncdu \
-	vault \
 	webp \
 	x264 \
 	x265 \
@@ -19,7 +27,6 @@ brew install \
 	xvid \
 	xz \
 	yarn \
-	thefuck \
 	speedtest-cli \
 	patchelf \
 	pkg-config \
@@ -32,7 +39,6 @@ brew install \
 	nvm \
 	node \
 	ncurses \
-	mtr \
 	lzo \
 	libusb \
 	libx11 \
@@ -45,15 +51,11 @@ brew install \
 	libbsd \
 	lame \
 	json-c \
-	yq \
-	jq \
 	jpeg \
 	itstool \
 	irssi \
 	influxdb \
-	hugo \
 	heroku \
-	go \
 	gnutls \
 	gettext \
 	ffmpeg \
