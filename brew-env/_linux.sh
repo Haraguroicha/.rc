@@ -65,4 +65,5 @@ brew install \
 	bzip2 \
 	automake \
 	autoconf \
-	ansifilter
+	ansifilter \
+	direnv

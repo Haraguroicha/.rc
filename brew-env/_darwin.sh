@@ -77,7 +77,8 @@ brew install \
 	gnupg \
 	gnupg2 \
 	pinentry-mac \
-	cocoapods
+	cocoapods \
+	direnv
 
 brew cask install \
 	alfred \
