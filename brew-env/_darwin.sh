@@ -80,7 +80,7 @@ brew install \
 	cocoapods \
 	direnv
 
-brew cask install \
+brew install --cask \
 	alfred \
 	dropbox \
 	bartender \
