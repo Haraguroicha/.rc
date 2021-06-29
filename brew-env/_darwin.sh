@@ -4,6 +4,7 @@ brew cask
 #brew tap caskroom/versions
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
+brew tap homebrew/cask-drivers
 brew tap heroku/brew
 brew tap gcenx/wine
 
@@ -111,4 +112,5 @@ brew install --cask \
 	nrlquaker-winbox \
 	intel-power-gadget \
 	android-platform-tools \
+	sony-ps4-remote-play \
 	font-jf-open-huninn
