@@ -3,11 +3,11 @@
 brew cask
 #brew tap caskroom/versions
 brew tap homebrew/cask-versions
-brew tap heroku/brew
 brew tap homebrew/cask-fonts
+brew tap heroku/brew
 brew tap gcenx/wine
 
-brew cask install osxfuse
+brew install --cask osxfuse
 
 brew install \
 	zsh \
