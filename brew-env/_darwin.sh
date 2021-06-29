@@ -113,4 +113,6 @@ brew install --cask \
 	intel-power-gadget \
 	android-platform-tools \
 	sony-ps4-remote-play \
+	canon-eos-utility \
+	canon-eos-webcam-utility \
 	font-jf-open-huninn
