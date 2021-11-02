@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brew cask
+#brew cask
 #brew tap caskroom/versions
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
