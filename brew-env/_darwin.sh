@@ -80,6 +80,8 @@ brew install \
 	pinentry-mac \
 	cocoapods \
 	iproute2mac \
+	homebrew/cask/docker \
+	docker-compose \
 	direnv
 
 brew install --cask \
