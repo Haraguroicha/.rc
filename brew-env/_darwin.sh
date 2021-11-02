@@ -88,6 +88,10 @@ brew install \
 [ ! -x '/Applications/Firefox.app' ] && brew install --cask firefox || echo "Firefox installed, ignored"
 [ ! -x '/Applications/Visual Studio Code.app' ] && brew install --cask visual-studio-code || echo "VS Code installed, ignored"
 [ ! -x '/Applications/1Password 7.app' ] && brew install --cask 1password || echo "1Password installed, ignored"
+[ ! -x '/Applications/Microsoft Word.app' ] && brew install --cask microsoft-word || echo "Microsoft Word installed, ignored"
+[ ! -x '/Applications/Microsoft PowerPoint.app' ] && brew install --cask microsoft-powerpoint || echo "Microsoft Powerpoint installed, ignored"
+[ ! -x '/Applications/Microsoft Excel.app' ] && brew install --cask microsoft-excel || echo "Microsoft Excel installed, ignored"
+[ ! -x '/Applications/Microsoft Outlook.app' ] && brew install --cask microsoft-outlook || echo "Microsoft Outlook installed, ignored"
 
 brew install --cask \
 	alfred \
@@ -111,7 +115,6 @@ brew install --cask \
 	parallels \
 	adobe-creative-cloud \
 	telegram telegram-desktop \
-	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
 	unofficial-wineskin \
 	nrlquaker-winbox \
 	intel-power-gadget \
