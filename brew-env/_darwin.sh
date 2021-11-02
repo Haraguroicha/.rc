@@ -84,12 +84,14 @@ brew install \
 	docker-compose \
 	direnv
 
+[ ! -x '/Applications/Google Chrome.app' ] && brew install --cask google-chrome || echo "Google Chrome installed, ignored"
+[ ! -x '/Applications/Firefox.app' ] && brew install --cask firefox || echo "Firefox installed, ignored"
+[ ! -x '/Applications/Visual Studio Code.app' ] && brew install --cask visual-studio-code || echo "VS Code installed, ignored"
+
 brew install --cask \
 	alfred \
 	dropbox \
 	bartender \
-	google-chrome \
-	firefox \
 	iterm2 \
 	macdown \
 	coconutbattery \
@@ -97,7 +99,6 @@ brew install --cask \
 	istat-menus \
 	onyx \
 	wireshark \
-	visual-studio-code \
 	WebPQuickLook \
 	1password \
 	gpg-suite-no-mail \
