@@ -1,0 +1,19 @@
+[user]
+	name = 腹黒い茶
+	signingkey = A4D44FC540963E24
+[core]
+	excludesfile = \"$HOME\"/.gitignore_global
+	precomposeunicode = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = \"$HOME\"/.stCommitMsg
+	gpgsign = true
+[gpg]
+	program = gpg2
+[alias]
+	logs = log --show-signature
