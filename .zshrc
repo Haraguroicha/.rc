@@ -132,7 +132,7 @@ _ipcalc () {
 alias ipcalc='_ipcalc'
 alias read-qr='sleep .5; (screencapture -i $TMPDIR/screencapture.qrcode.png && zbarimg -q --raw $TMPDIR/screencapture.qrcode.png; shred -u $TMPDIR/screencapture.qrcode.png) | pbcopy -Prefer txt'
 
-for file in $(dirname $(readlink ~/.zshrc))/.rc.function/*.zsh; do
+for file in $(find "$(dirname $(readlink ~/.zshrc))/.rc.function" -name \*.zsh); do
     if [[ -a "$file" ]]; then
         source "$file"
     fi
