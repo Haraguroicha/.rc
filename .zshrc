@@ -132,10 +132,11 @@ _ipcalc () {
 alias ipcalc='_ipcalc'
 alias read-qr='sleep .5; (screencapture -i $TMPDIR/screencapture.qrcode.png && zbarimg -q --raw $TMPDIR/screencapture.qrcode.png; shred -u $TMPDIR/screencapture.qrcode.png) | pbcopy -Prefer txt'
 
-(
-	cd "$( cd "$( dirname "$0" )" && pwd )/.rc.function"
-	find *.zsh -exec source {}\;
-)
+for file in $(dirname $(readlink ~/.zshrc))/.rc.function/*.zsh; do
+    if [[ -a "$file" ]]; then
+        source "$file"
+    fi
+done
 
 export EDITOR=nano
 export MANPAGER='most -s'
