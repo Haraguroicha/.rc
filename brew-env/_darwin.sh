@@ -87,6 +87,7 @@ brew install \
 [ ! -x '/Applications/Google Chrome.app' ] && brew install --cask google-chrome || echo "Google Chrome installed, ignored"
 [ ! -x '/Applications/Firefox.app' ] && brew install --cask firefox || echo "Firefox installed, ignored"
 [ ! -x '/Applications/Visual Studio Code.app' ] && brew install --cask visual-studio-code || echo "VS Code installed, ignored"
+[ ! -x '/Applications/1Password 7.app' ] && brew install --cask 1password || echo "1Password installed, ignored"
 
 brew install --cask \
 	alfred \
@@ -100,7 +101,6 @@ brew install --cask \
 	onyx \
 	wireshark \
 	WebPQuickLook \
-	1password \
 	gpg-suite-no-mail \
 	font-hack-nerd-font \
 	mattermost \
