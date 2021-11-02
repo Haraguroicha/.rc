@@ -79,6 +79,7 @@ brew install \
 	gnupg2 \
 	pinentry-mac \
 	cocoapods \
+	iproute2mac \
 	direnv
 
 brew install --cask \
@@ -112,7 +113,7 @@ brew install --cask \
 	nrlquaker-winbox \
 	intel-power-gadget \
 	android-platform-tools \
-	sony-ps4-remote-play \
 	canon-eos-utility \
 	canon-eos-webcam-utility \
-	font-jf-open-huninn
+	font-jf-open-huninn \
+#	sony-ps4-remote-play \
