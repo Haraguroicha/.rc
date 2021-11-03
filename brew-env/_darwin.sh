@@ -37,6 +37,7 @@ brew install \
 	libyubikey pam_yubico pam-u2f \
 	speedtest-cli \
 	ipcalc \
+	subnetcalc \
 	httping \
 	aria2 \
 	hugo \
