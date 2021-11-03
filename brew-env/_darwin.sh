@@ -54,6 +54,7 @@ brew install \
 	pv \
 	jpeg \
 	gnu-tar \
+	azure-cli \
 	kubernetes-cli \
 	libtool \
 	watch \
@@ -122,4 +123,5 @@ brew install --cask \
 	canon-eos-utility \
 	canon-eos-webcam-utility \
 	font-jf-open-huninn \
+	lens \
 #	sony-ps4-remote-play \
