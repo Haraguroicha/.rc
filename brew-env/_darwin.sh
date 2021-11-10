@@ -125,4 +125,5 @@ brew install --cask \
 	canon-eos-webcam-utility \
 	font-jf-open-huninn \
 	lens \
+	microsoft-azure-storage-explorer \
 #	sony-ps4-remote-play \
