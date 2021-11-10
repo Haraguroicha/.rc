@@ -17,3 +17,7 @@
 	program = gpg2
 [alias]
 	logs = log --show-signature
+	branch-prune = "!f() { \
+				export LC_ALL=en_US.UTF-8; \
+				git branch --list --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' | xargs git branch -D; \
+			}; f"
