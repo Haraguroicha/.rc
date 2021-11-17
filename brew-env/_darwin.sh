@@ -84,6 +84,7 @@ brew install \
 	iproute2mac \
 	homebrew/cask/docker \
 	docker-compose \
+	helm \
 	direnv
 
 [ ! -x '/Applications/Google Chrome.app' ] && brew install --cask google-chrome || echo "Google Chrome installed, ignored"
