@@ -38,8 +38,11 @@ for file in $(find "${MY_RC_PATH}/.rc.function" -name \*.zsh); do
     fi
 done
 
-# for gpg-agent on macOS, always uses curses to prompt gpg password
-export PINENTRY_USER_DATA="USE_CURSES=1"
+# for gpg-agent on macOS, always uses curses to prompt gpg password when in ssh session
+if [ -n "$SSH_TTY" ]; then
+	export GPG_TTY=$(tty)
+	export PINENTRY_USER_DATA="USE_CURSES=1"
+fi
 
 export EDITOR=nano
 export MANPAGER='most -s'
