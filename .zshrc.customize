@@ -1,0 +1,59 @@
+if [ -f /etc/zsh/zshrc ]; then
+	source /etc/zsh/zshrc
+fi
+
+#[ -s "$HOME/.dnx/dnvm/dnvm.sh" ] && source "$HOME/.dnx/dnvm/dnvm.sh" # Load dnvm
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+#export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$PATH:$HOME/go/bin"
+
+export PATH="$HOME/.HaraguroichaTools:$PATH"
+
+alias ncdu='sudo /usr/local/bin/ncdu --si --exclude /System/Volumes/Data --exclude /Volumes'
+
+_ipcalc () {
+	[[ "$#" -gt "0" ]] && (
+		ip=$1
+		shift
+		subnetcalc $ip -n $*
+	) || echo "Need IP"
+}
+alias ipcalc='_ipcalc'
+
+alias read-qr='sleep .5; (screencapture -i $TMPDIR/screencapture.qrcode.png && zbarimg -q --raw $TMPDIR/screencapture.qrcode.png; shred -u $TMPDIR/screencapture.qrcode.png) | pbcopy -Prefer txt'
+
+MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
+my-rc-update () {
+	(
+		cd "${MY_RC_PATH}"
+		git pull
+	)
+}
+
+for file in $(find "${MY_RC_PATH}/.rc.function" -name \*.zsh); do
+    if [[ -a "$file" ]]; then
+        source "$file"
+    fi
+done
+
+# for gpg-agent on macOS, always uses curses to prompt gpg password
+export PINENTRY_USER_DATA="USE_CURSES=1"
+
+export EDITOR=nano
+export MANPAGER='most -s'
+#export POWERLEVEL9K_MODE='nerdfont-complete'
+#source "`brew --prefix powerlevel9k`/powerlevel9k.zsh-theme"
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir vcs newline status root_indicator)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon battery background_jobs history time)
+#POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(direnv hook zsh)"
+eval "neofetch"
+export PATH="/usr/local/opt/curl/bin:$PATH"
