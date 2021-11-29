@@ -60,3 +60,5 @@ export MANPAGER='most -s'
 eval "$(direnv hook zsh)"
 eval "neofetch"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export JAVA_HOME=/usr/local/opt/openjdk@11
+export PATH="$JAVA_HOME:$PATH"
