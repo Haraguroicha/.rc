@@ -85,6 +85,7 @@ brew install \
 	homebrew/cask/docker \
 	docker-compose \
 	helm \
+	hudochenkov/sshpass/sshpass \
 	direnv
 
 [ ! -x '/Applications/Google Chrome.app' ] && brew install --cask google-chrome || echo "Google Chrome installed, ignored"
