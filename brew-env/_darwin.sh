@@ -7,7 +7,6 @@ brew tap homebrew/cask-fonts
 brew tap homebrew/cask-drivers
 brew tap heroku/brew
 brew tap gcenx/wine
-brew tap InstantClientTap/instantclient
 
 brew install --cask osxfuse
 
@@ -87,7 +86,7 @@ brew install \
 	docker-compose \
 	helm \
 	hudochenkov/sshpass/sshpass \
-	instantclient-basic instantclient-sqlplus instantclient-tools \
+	InstantClientTap/instantclient/instantclient-basic InstantClientTap/instantclient/instantclient-sqlplus InstantClientTap/instantclient/instantclient-tools \
 	direnv
 
 [ ! -x '/Applications/Google Chrome.app' ] && brew install --cask google-chrome || echo "Google Chrome installed, ignored"
