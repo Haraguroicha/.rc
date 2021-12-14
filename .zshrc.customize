@@ -62,3 +62,5 @@ eval "neofetch"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export JAVA_HOME=/usr/local/opt/openjdk@11
 export PATH="$JAVA_HOME:$PATH"
+export TNS_ADMIN="$HOME/.oracle/network/admin"
+export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
