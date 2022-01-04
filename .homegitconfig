@@ -23,3 +23,5 @@
 				git branch --list --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' | xargs git branch -D; \
 				git prune -v --progress --expire=now; \
 			}; f"
+[pull]
+	rebase = true
