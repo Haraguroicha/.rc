@@ -25,11 +25,14 @@ alias ipcalc='_ipcalc'
 alias read-qr='sleep .5; (screencapture -i $TMPDIR/screencapture.qrcode.png && zbarimg -q --raw $TMPDIR/screencapture.qrcode.png; shred -u $TMPDIR/screencapture.qrcode.png) | pbcopy -Prefer txt'
 
 MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
-my-rc-update () {
+my-rc-update-git () {
 	(
 		cd "${MY_RC_PATH}"
-		git pull
+		git $*
 	)
+}
+my-rc-update () {
+	my-rc-update-git pull
 }
 
 for file in $(find "${MY_RC_PATH}/.rc.function" -name \*.zsh); do
