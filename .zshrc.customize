@@ -88,3 +88,6 @@ export JAVA_HOME=/usr/local/opt/openjdk@11
 export PATH="$JAVA_HOME:$PATH"
 export TNS_ADMIN="$HOME/.oracle/network/admin"
 export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+
+clear-screen() { echoti clear; eval "neofetch"; zle redisplay; }
+zle -N clear-screen
