@@ -89,6 +89,7 @@ brew install \
 	InstantClientTap/instantclient/instantclient-basic InstantClientTap/instantclient/instantclient-sqlplus InstantClientTap/instantclient/instantclient-tools \
 	html-xml-utils \
 	expect moreutils \
+	fzf \
 	direnv
 
 [ ! -x '/Applications/Google Chrome.app' ] && brew install --cask google-chrome || echo "Google Chrome installed, ignored"

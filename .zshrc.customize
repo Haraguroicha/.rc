@@ -1,6 +1,18 @@
+MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
+
 if [ -f /etc/zsh/zshrc ]; then
 	source /etc/zsh/zshrc
 fi
+
+# enable fzf binding
+[ -f "/usr/local/opt/fzf/shell/key-bindings.zsh" ] && [ -f "${MY_RC_PATH}/.fzf.zsh" ] && source "${MY_RC_PATH}/.fzf.zsh"
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+# For Plugins default configurations
+
+## zsh-history-substring-search
+bindkey '^[^[[A' history-substring-search-up
+bindkey '^[^[[B' history-substring-search-down
 
 #[ -s "$HOME/.dnx/dnvm/dnvm.sh" ] && source "$HOME/.dnx/dnvm/dnvm.sh" # Load dnvm
 
@@ -24,7 +36,6 @@ alias ipcalc='_ipcalc'
 
 alias read-qr='sleep .5; (screencapture -i $TMPDIR/screencapture.qrcode.png && zbarimg -q --raw $TMPDIR/screencapture.qrcode.png; shred -u $TMPDIR/screencapture.qrcode.png) | pbcopy -Prefer txt'
 
-MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
 my-rc-update-git () {
 	(
 		cd "${MY_RC_PATH}"
