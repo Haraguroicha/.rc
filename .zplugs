@@ -5,7 +5,7 @@ zplug "romkatv/zsh-defer", defer:2
 zplug "z-shell/F-Sy-H", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
-zplug "mafredri/zsh-async", use:"async.zsh", defer:2
+zplug "mafredri/zsh-async", defer:2
 zplug "z-shell/zsh-diff-so-fancy", as:command, use:"bin/", defer:2
 zplug "ptavares/zsh-direnv", defer:2
 zplug "hcgraf/zsh-sudo", defer:2
