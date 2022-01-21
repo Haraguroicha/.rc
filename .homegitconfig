@@ -4,7 +4,7 @@
 [core]
 	excludesfile = \"$HOME\"/.gitignore_global
 	precomposeunicode = true
-	pager = diff-so-fancy | less --tabs=4 -RF
+	pager = diff-so-fancy | less --tabs=4 -R
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -17,6 +17,7 @@
 [gpg]
 	program = gpg2
 [alias]
+	dif = "!f() { git diff | diff-so-fancy; }; f"
 	logs = log --show-signature
 	branch-prune = "!f() { \
 				export LC_ALL=en_US.UTF-8; \

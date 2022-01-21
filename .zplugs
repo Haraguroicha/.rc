@@ -9,4 +9,5 @@ zplug "mafredri/zsh-async", use:"async.zsh"
 zplug "z-shell/zsh-diff-so-fancy", as:command, use:"bin/"
 zplug "ptavares/zsh-direnv"
 zplug "hcgraf/zsh-sudo"
+zplug "scopatz/nanorc", hook-build:"rm ~/.nano; ln -sf "$(brew --prefix zplug)/repos/scopatz/nanorc" ~/.nano"
 zplug "romkatv/powerlevel10k", as:theme
