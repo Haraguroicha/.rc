@@ -1,8 +1,21 @@
 MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
 
+_executed_neofetch=0
+_neofetch () {
+    if [ "$_executed_neofetch" = "0" ]; then
+        _executed_neofetch=1
+	echo "$(neofetch)"
+    fi
+}
+clear-screen() { echoti clear; eval "neofetch"; zle redisplay; }
+zle -N clear-screen
+_neofetch
+
 export ZPLUG_HOME=$(brew --prefix zplug)
 [ -f "$ZPLUG_HOME/init.zsh" ] && source $ZPLUG_HOME/init.zsh
 source ${MY_RC_PATH}/.zplugs
+
+_zplugs_loaded=0
 _zplug_check_and_install () {
     # Install plugins if there are plugins that have not been installed
     zcv=$(zplug check --verbose)
@@ -16,7 +29,11 @@ _zplug_check_and_install () {
         fi
         echo
     else
-        echo -e "\n.zplugs changed, reloading ...\n"
+        if [ "$_zplugs_loaded" = "0" ]; then
+            _zplugs_loaded=1
+        else
+            echo -e "\n.zplugs changed, reloading ...\n"
+        fi
     fi
     # Then, source plugins and add commands to $PATH
     setopt LOCAL_OPTIONS NO_MONITOR
@@ -96,15 +113,12 @@ export MANPAGER='most -s'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #zsh-defer eval "$(direnv hook zsh)"
-zsh-defer eval "neofetch"
+#zsh-defer eval "neofetch"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export JAVA_HOME=/usr/local/opt/openjdk@11
 export PATH="$JAVA_HOME:$PATH"
 export TNS_ADMIN="$HOME/.oracle/network/admin"
 export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
-
-clear-screen() { echoti clear; eval "neofetch"; zle redisplay; }
-zle -N clear-screen
 
 # watch .zplugs
 async_start_worker watch_zplugs -n

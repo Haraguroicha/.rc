@@ -110,4 +110,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source "$(dirname $(readlink ~/.zshrc))/.zshrc.customize"
+source "$(dirname $(readlink ~/.zshrc))/.customize.zshrc"
