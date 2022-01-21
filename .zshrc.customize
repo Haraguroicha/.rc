@@ -3,15 +3,28 @@ MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
 export ZPLUG_HOME=$(brew --prefix zplug)
 [ -f "$ZPLUG_HOME/init.zsh" ] && source $ZPLUG_HOME/init.zsh
 source ${MY_RC_PATH}/.zplugs
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
+_zplug_check_and_install () {
+    # Install plugins if there are plugins that have not been installed
+    zcv=$(zplug check --verbose)
+    if [ -n "$zcv" ]; then
+        printf "\n$zcv\nInstall? [y(or any)/N]: "
+        if read -q; then
+            echo
+            zplug install
+        else
+            echo N
+        fi
+        echo
+    else
+        echo -e "\n.zplugs changed, reloading ...\n"
     fi
-fi
-# Then, source plugins and add commands to $PATH
-zplug load
+    # Then, source plugins and add commands to $PATH
+    setopt LOCAL_OPTIONS NO_MONITOR
+    zplug load
+    setopt LOCAL_OPTIONS MONITOR
+    zle && { zle reset-prompt; zle -R }
+}
+_zplug_check_and_install
 
 if [ -f /etc/zsh/zshrc ]; then
 	source /etc/zsh/zshrc
@@ -36,6 +49,7 @@ export PATH="$PATH:$HOME/go/bin"
 
 export PATH="$HOME/.HaraguroichaTools:$PATH"
 
+alias sudoedit='sudo nano'
 alias ncdu='sudo /usr/local/bin/ncdu --si --exclude /System/Volumes/Data --exclude /Volumes'
 
 _ipcalc () {
@@ -81,8 +95,8 @@ export MANPAGER='most -s'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval "$(direnv hook zsh)"
-eval "neofetch"
+#zsh-defer eval "$(direnv hook zsh)"
+zsh-defer eval "neofetch"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export JAVA_HOME=/usr/local/opt/openjdk@11
 export PATH="$JAVA_HOME:$PATH"
@@ -91,3 +105,16 @@ export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
 
 clear-screen() { echoti clear; eval "neofetch"; zle redisplay; }
 zle -N clear-screen
+
+# watch .zplugs
+async_start_worker watch_zplugs -n
+_zplugs_callback () {
+	source ${MY_RC_PATH}/.zplugs
+	_zplug_check_and_install
+	_zplugs_new_job
+}
+async_register_callback watch_zplugs _zplugs_callback
+_zplugs_new_job () {
+	async_job watch_zplugs fswatch -1 .zplugs
+}
+_zplugs_new_job

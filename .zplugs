@@ -1,0 +1,12 @@
+zplugs=()
+zplug "romkatv/zsh-defer", defer:2
+#zplug "marlonrichert/zsh-autocomplete", defer:2
+#zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "z-shell/F-Sy-H", defer:2
+zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:2
+zplug "mafredri/zsh-async", use:"async.zsh"
+zplug "z-shell/zsh-diff-so-fancy", as:command, use:"bin/"
+zplug "ptavares/zsh-direnv"
+zplug "hcgraf/zsh-sudo"
+zplug "romkatv/powerlevel10k", as:theme
