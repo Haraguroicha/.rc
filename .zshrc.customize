@@ -1,5 +1,18 @@
 MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
 
+export ZPLUG_HOME=$(brew --prefix zplug)
+[ -f "$ZPLUG_HOME/init.zsh" ] && source $ZPLUG_HOME/init.zsh
+source ${MY_RC_PATH}/.zplugs
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+# Then, source plugins and add commands to $PATH
+zplug load
+
 if [ -f /etc/zsh/zshrc ]; then
 	source /etc/zsh/zshrc
 fi

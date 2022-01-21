@@ -66,5 +66,5 @@ brew install \
 	automake \
 	autoconf \
 	ansifilter \
-	fzf \
+	fzf zplug \
 	direnv
