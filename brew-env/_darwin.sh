@@ -90,6 +90,7 @@ brew install \
 	html-xml-utils \
 	expect moreutils \
 	fzf zplug \
+	fswatch \
 	direnv
 
 [ ! -x '/Applications/Google Chrome.app' ] && brew install --cask google-chrome || echo "Google Chrome installed, ignored"

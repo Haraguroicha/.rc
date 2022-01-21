@@ -67,4 +67,5 @@ brew install \
 	autoconf \
 	ansifilter \
 	fzf zplug \
+	fswatch \
 	direnv
