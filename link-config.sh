@@ -12,6 +12,5 @@ lnsf .tmux.conf .tmux.conf
 lnsf .bashrc-env .bashrc-env
 lnsf .homegitconfig .gitconfig
 lnsf .homeenvrc .envrc
-[ -f ~/.nano/nanorc ] && lnsf ~/.nano/nanorc ~/.nanorc
 
 da
