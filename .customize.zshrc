@@ -4,7 +4,7 @@ _executed_neofetch=0
 _neofetch () {
     if [ "$_executed_neofetch" = "0" ]; then
         _executed_neofetch=1
-	echo "$(neofetch)"
+	printf "$(neofetch)"
     fi
 }
 clear-screen() { echoti clear; eval "neofetch"; zle redisplay; }
