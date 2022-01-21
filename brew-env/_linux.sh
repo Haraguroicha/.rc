@@ -68,4 +68,5 @@ brew install \
 	ansifilter \
 	fzf zplug \
 	fswatch \
+	diff-so-fancy \
 	direnv
