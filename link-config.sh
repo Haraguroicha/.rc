@@ -1,7 +1,10 @@
-#!/bin/bash
+#!/bin/zsh
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
 cd "$HOME"
+
+source $DIR/.import-rc-function.zsh
+import-rc-function
 
 lnsf .zshrc .zshrc
 lnsf .p10k.zsh .p10k.zsh
