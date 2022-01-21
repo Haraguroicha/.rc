@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 retag() {
 	docker pull $1
