@@ -121,14 +121,20 @@ export TNS_ADMIN="$HOME/.oracle/network/admin"
 export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
 
 # watch .zplugs
-async_start_worker watch_zplugs -n
-_zplugs_callback () {
-	source ${MY_RC_PATH}/.zplugs
-	_zplug_check_and_install
-	_zplugs_new_job
-}
-async_register_callback watch_zplugs _zplugs_callback
-_zplugs_new_job () {
-	async_job watch_zplugs fswatch -1 .zplugs
-}
-_zplugs_new_job
+#async_start_worker watch_zplugs -n
+#_zplugs_callback () {
+#	source ${MY_RC_PATH}/.zplugs
+#	_zplug_check_and_install
+#	_zplugs_new_job
+#}
+#__killfswatch () {
+#	sleep 600
+#	_zplugs_loaded=0
+#	ps aux | grep 'fswatch -1 .zplugs' | grep -v grep | awk '{print $2}' | xargs kill
+#}
+#async_register_callback watch_zplugs _zplugs_callback
+#_zplugs_new_job () {
+#	async_job watch_zplugs fswatch -1 .zplugs
+#	async_job watch_zplugs __killfswatch
+#}
+#_zplugs_new_job
