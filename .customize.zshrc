@@ -108,8 +108,8 @@ export MANPAGER='most -s'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#zsh-defer eval "$(direnv hook zsh)"
-#zsh-defer eval "neofetch"
+#eval "neofetch"
+eval "$(direnv hook zsh)"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export JAVA_HOME=/usr/local/opt/openjdk@11
 export PATH="$JAVA_HOME:$PATH"
