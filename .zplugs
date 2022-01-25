@@ -7,7 +7,7 @@ zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "mafredri/zsh-async", defer:2
 zplug "z-shell/zsh-diff-so-fancy", as:command, use:"bin/", defer:2
-zplug "ptavares/zsh-direnv", defer:2
+#zplug "ptavares/zsh-direnv", defer:2
 zplug "hcgraf/zsh-sudo", defer:2
 zplug "scopatz/nanorc", hook-build:"rm ~/.nano ~/.nanorc; ln -sf "$(brew --prefix zplug)/repos/scopatz/nanorc" ~/.nano; ln -sf ~/.nano/nanorc ~/.nanorc", defer:2
 zplug "romkatv/powerlevel10k", as:theme
