@@ -43,10 +43,6 @@ _zplug_check_and_install () {
 }
 _zplug_check_and_install
 
-if [ -f /etc/zsh/zshrc ]; then
-	source /etc/zsh/zshrc
-fi
-
 # enable fzf binding
 [ -f "/usr/local/opt/fzf/shell/key-bindings.zsh" ] && [ -f "${MY_RC_PATH}/.fzf.zsh" ] && source "${MY_RC_PATH}/.fzf.zsh"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
