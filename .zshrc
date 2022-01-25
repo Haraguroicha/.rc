@@ -111,3 +111,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
+
+[ "${TERM_PROGRAM}" = "iTerm.app" ] && [ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
