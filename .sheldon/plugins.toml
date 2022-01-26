@@ -81,6 +81,9 @@ apply = ["defer"]
 [plugins.wd-sh]
 github = "mfaerevaag/wd"
 apply = ["wd"]
+[plugins.zsh-fuzzy-wd]
+github = "spodin/zsh-fuzzy-wd"
+apply = ["defer"]
 
 # theme
 [plugins.powerlevel10k]
