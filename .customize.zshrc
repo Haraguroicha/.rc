@@ -1,13 +1,25 @@
 MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
 
-_executed_neofetch=0
+[ -n "$XDG_SESSION_ID" ] && _sid=$XDG_SESSION_ID
+[ -z "$_sid" ] && [ -n "$TERM_SESSION_ID" ] && _sid=$TERM_SESSION_ID
+[ -z "$_sid" ] && _sid=${$(uuidgen):l}
+[ -z "$_sid" ] && _sid=$(echo $RANDOM | md5sum | head -c 20)
+_neofetch_tmp=${TMPDIR}/_tmp_neofetch_sid_${_sid}.txt
 _neofetch () {
-    if [ "$_executed_neofetch" = "0" ]; then
-        _executed_neofetch=1
-	printf "$(neofetch)"
-    fi
+	if [ -f "$_neofetch_tmp" ]; then
+		cat "$_neofetch_tmp"
+	else
+		nf="$(cat <<NFS
+$(neofetch)
+Generated at $(date '+%Y-%m-%d %H:%M:%S'), force update use clean screen by press \e[47m\e[30m ^L \e[0m
+ 
+ 
+NFS
+)"
+		echo "$nf" | tee "$_neofetch_tmp"
+	fi
 }
-clear-screen() { echoti clear; eval "neofetch"; zle redisplay; }
+clear-screen() { echoti clear; rm "$_neofetch_tmp"; _neofetch; zle redisplay; }
 zle -N clear-screen
 _neofetch
 
