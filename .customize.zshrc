@@ -64,6 +64,9 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 ## zsh-history-substring-search
 bindkey '^[^[[A' history-substring-search-up
 bindkey '^[^[[B' history-substring-search-down
+## zsh-directory-history
+bindkey '^j' directory-history-search-backward
+bindkey '^k' directory-history-search-forward
 
 alias sudoedit='sudo nano'
 alias ncdu='sudo /usr/local/bin/ncdu --si --exclude /System/Volumes/Data --exclude /Volumes'
