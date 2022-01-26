@@ -16,6 +16,7 @@ shell = "zsh"
 defer = { value = 'zsh-defer source "{{ file }}"', each = true }
 nanorc = { value = 'rm ~/.nano ~/.nanorc; ln -sf "${SHELDON_DIR}/repos/github.com/scopatz/nanorc" ~/.nano; ln -sf ~/.nano/nanorc ~/.nanorc', each = false }
 wd = { value = 'wd () { . "{{ dir }}/wd.sh" }; _wd.sh () { . "{{ dir }}/_wd.sh" }', each = false }
+dirhist = { value = 'dirhist () { "{{ dir }}/dirhist" $* }', each = false }
 
 [plugins]
 
@@ -74,8 +75,7 @@ apply = ["PATH"]
 # per directory history
 [plugins.zsh-directory-history]
 github = "tymm/zsh-directory-history"
-use = ["dirhist"]
-apply = ["defer"]
+apply = ["defer", "dirhist"]
 
 # magic directory change
 [plugins.wd-sh]
