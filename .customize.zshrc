@@ -65,15 +65,6 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 bindkey '^[^[[A' history-substring-search-up
 bindkey '^[^[[B' history-substring-search-down
 
-#[ -s "$HOME/.dnx/dnvm/dnvm.sh" ] && source "$HOME/.dnx/dnvm/dnvm.sh" # Load dnvm
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#export PATH="$PATH:$HOME/.rvm/bin"
-
-export PATH="$PATH:$HOME/go/bin"
-
-export PATH="$HOME/.HaraguroichaTools:$PATH"
-
 alias sudoedit='sudo nano'
 alias ncdu='sudo /usr/local/bin/ncdu --si --exclude /System/Volumes/Data --exclude /Volumes'
 
@@ -107,26 +98,29 @@ if [ -n "$SSH_TTY" ]; then
 	export PINENTRY_USER_DATA="USE_CURSES=1"
 fi
 
-export EDITOR=nano
-export MANPAGER='most -s'
 #export POWERLEVEL9K_MODE='nerdfont-complete'
 #source "`brew --prefix powerlevel9k`/powerlevel9k.zsh-theme"
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir vcs newline status root_indicator)
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon battery background_jobs history time)
 #POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
 
-#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #eval "neofetch"
 eval "$(direnv hook zsh)"
+#[ -s "$HOME/.dnx/dnvm/dnvm.sh" ] && source "$HOME/.dnx/dnvm/dnvm.sh" # Load dnvm
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+#export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$HOME/.HaraguroichaTools:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export JAVA_HOME=/usr/local/opt/openjdk@11
 export PATH="$JAVA_HOME:$PATH"
 export TNS_ADMIN="$HOME/.oracle/network/admin"
 export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+export EDITOR=nano
+export MANPAGER='most -s'
 
 # watch .zplugs
 #async_start_worker watch_zplugs -n
