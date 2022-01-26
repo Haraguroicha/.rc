@@ -66,7 +66,7 @@ brew install \
 	automake \
 	autoconf \
 	ansifilter \
-	fzf zplug \
+	fzf sheldon \
 	fswatch \
 	diff-so-fancy \
 	direnv

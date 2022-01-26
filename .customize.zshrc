@@ -23,37 +23,42 @@ clear-screen() { echoti clear; rm "$_neofetch_tmp"; _neofetch; zle redisplay; }
 zle -N clear-screen
 _neofetch
 
-export ZPLUG_HOME=$(brew --prefix zplug)
-[ -f "$ZPLUG_HOME/init.zsh" ] && source $ZPLUG_HOME/init.zsh
-source ${MY_RC_PATH}/.zplugs
+export SHELDON_DIR=$MY_RC_PATH/.sheldon
+export SHELDON_CONFIG_DIR=$SHELDON_DIR
+export SHELDON_DATA_DIR=$SHELDON_DIR
+eval "$(sheldon source)"
 
-_zplugs_loaded=0
-_zplug_check_and_install () {
-    # Install plugins if there are plugins that have not been installed
-    zcv=$(zplug check --verbose)
-    if [ -n "$zcv" ]; then
-        printf "\n$zcv\nInstall? [y(or any)/N]: "
-        if read -q; then
-            echo
-            zplug install
-        else
-            echo N
-        fi
-        echo
-    else
-        if [ "$_zplugs_loaded" = "0" ]; then
-            _zplugs_loaded=1
-        else
-            echo -e "\n.zplugs changed, reloading ...\n"
-        fi
-    fi
-    # Then, source plugins and add commands to $PATH
-    setopt LOCAL_OPTIONS NO_MONITOR
-    zplug load
-    setopt LOCAL_OPTIONS MONITOR
-    zle && { zle reset-prompt; zle -R }
-}
-_zplug_check_and_install
+#export ZPLUG_HOME=$(brew --prefix zplug)
+#[ -f "$ZPLUG_HOME/init.zsh" ] && source $ZPLUG_HOME/init.zsh
+#source ${MY_RC_PATH}/.zplugs
+
+#_zplugs_loaded=0
+#_zplug_check_and_install () {
+#    # Install plugins if there are plugins that have not been installed
+#    zcv=$(zplug check --verbose)
+#    if [ -n "$zcv" ]; then
+#        printf "\n$zcv\nInstall? [y(or any)/N]: "
+#        if read -q; then
+#            echo
+#            zplug install
+#        else
+#            echo N
+#        fi
+#        echo
+#    else
+#        if [ "$_zplugs_loaded" = "0" ]; then
+#            _zplugs_loaded=1
+#        else
+#            echo -e "\n.zplugs changed, reloading ...\n"
+#        fi
+#    fi
+#    # Then, source plugins and add commands to $PATH
+#    setopt LOCAL_OPTIONS NO_MONITOR
+#    zplug load
+#    setopt LOCAL_OPTIONS MONITOR
+#    zle && { zle reset-prompt; zle -R }
+#}
+#_zplug_check_and_install
 
 # enable fzf binding
 [ -f "/usr/local/opt/fzf/shell/key-bindings.zsh" ] && [ -f "${MY_RC_PATH}/.fzf.zsh" ] && source "${MY_RC_PATH}/.fzf.zsh"

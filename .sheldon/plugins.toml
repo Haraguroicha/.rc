@@ -1,0 +1,87 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[templates]
+defer = { value = 'zsh-defer source "{{ file }}"', each = true }
+nanorc = { value = 'rm ~/.nano ~/.nanorc; ln -sf "${SHELDON_DIR}/repos/github.com/scopatz/nanorc" ~/.nano; ln -sf ~/.nano/nanorc ~/.nanorc', each = false }
+wd = { value = 'wd () { . "{{ dir }}/wd.sh" }; _wd.sh () { . "{{ dir }}/_wd.sh" }', each = false }
+
+[plugins]
+
+# For example:
+#
+# [plugins.base16]
+# github = "chriskempson/base16-shell"
+
+# async job
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+[plugins.zsh-async]
+github = "mafredri/zsh-async"
+apply = ["defer"]
+
+#[plugins.zsh-autocomplete]
+#github = "marlonrichert/zsh-autocomplete"
+#apply = ["defer"]
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ["defer"]
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+apply = ["defer"]
+
+# syntax highlight
+# replaced by F-Sy-H
+#[plugins.zsh-syntax-highlighting]
+#github = "zsh-users/zsh-syntax-highlighting"
+#apply = ["defer"]
+[plugins.F-Sy-H]
+github = "z-shell/F-Sy-H"
+apply = ["defer"]
+
+# not so easy to use
+#[plugins.zsh-direnv]
+#github = "ptavares/zsh-direnv"
+#apply = ["defer"]
+
+# esc twice to prepend sudo
+[plugins.zsh-sudo]
+github = "hcgraf/zsh-sudo"
+apply = ["defer"]
+
+# nano color format
+[plugins.nanorc]
+github = "scopatz/nanorc"
+apply = ["nanorc"]
+
+# git diff or diff fancy
+[plugins.zsh-diff-so-fancy]
+github = "z-shell/zsh-diff-so-fancy"
+use = ["bin/*"]
+apply = ["defer"]
+
+# per directory history
+[plugins.zsh-directory-history]
+github = "tymm/zsh-directory-history"
+use = ["dirhist"]
+apply = ["defer"]
+
+# magic directory change
+[plugins.wd-sh]
+github = "mfaerevaag/wd"
+apply = ["wd"]
+
+# theme
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"

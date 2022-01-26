@@ -89,7 +89,7 @@ brew install \
 	InstantClientTap/instantclient/instantclient-basic InstantClientTap/instantclient/instantclient-sqlplus InstantClientTap/instantclient/instantclient-tools \
 	html-xml-utils \
 	expect moreutils \
-	fzf zplug \
+	fzf sheldon \
 	fswatch \
 	diff-so-fancy \
 	direnv
