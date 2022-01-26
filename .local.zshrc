@@ -18,7 +18,13 @@ setopt INC_APPEND_HISTORY # Add immediately
 setopt NO_HIST_BEEP # Don't beep
 setopt SHARE_HISTORY # Share history between session/terminals
 setopt correct
-autoload -U compinit && compinit
+#autoload -U compinit && compinit
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format '%F{red}Completing%f %F{green}%d%f'
@@ -113,17 +119,17 @@ function snow(){
 }
 
 # Custom command prompt %h for host name
-h=$(hostname -s)
+#h=$(hostname -s)
 #PROMPT='[%F{green}%n%f@%F{cyan}$h%f %F{yellow}%D{%Y-%m-%d}%f %F{red}%D{%H:%M:%S}%f %F{magenta}%~%f]%F{yellow}%#%f '
 
-if [ -d /etc/profile.d ]; then
-  for i in /etc/profile.d/*.sh; do
-    if [ -r $i ]; then
-      #source $i
-    fi
-  done
-  unset i
-fi
+#if [ -d /etc/profile.d ]; then
+#  for i in /etc/profile.d/*.sh; do
+#    if [ -r $i ]; then
+#      #source $i
+#    fi
+#  done
+#  unset i
+#fi
 
 # Command search path
 export PATH=$PATH:/bin
@@ -141,8 +147,6 @@ export PATH=$PATH:/usr/local/sbin
 #fi
 #source /opt/asn
 
-if [ -f /etc/zsh/zshrc ]; then
-	source /etc/zsh/zshrc
-fi
+[ -f /etc/zsh/zshrc ] && source /etc/zsh/zshrc
 
 source "$(dirname $(readlink ~/.zshrc))/.customize.zshrc"
