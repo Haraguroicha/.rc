@@ -1,13 +1,37 @@
+# always empty plugins
 zplugs=()
-zplug "romkatv/zsh-defer", defer:2
+
 #zplug "marlonrichert/zsh-autocomplete", defer:2
-#zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "z-shell/F-Sy-H", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
+
+# syntax highlight
+# replaced by F-Sy-H
+#zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "z-shell/F-Sy-H", defer:2
+
+# async job
 zplug "mafredri/zsh-async", defer:2
-zplug "z-shell/zsh-diff-so-fancy", as:command, use:"bin/", defer:2
+zplug "romkatv/zsh-defer", defer:2
+
+# not so easy to use
 #zplug "ptavares/zsh-direnv", defer:2
+
+# esc twice to prepend sudo
 zplug "hcgraf/zsh-sudo", defer:2
+
+# nano color format
 zplug "scopatz/nanorc", hook-build:"rm ~/.nano ~/.nanorc; ln -sf "$(brew --prefix zplug)/repos/scopatz/nanorc" ~/.nano; ln -sf ~/.nano/nanorc ~/.nanorc", defer:2
+
+# git diff or diff fancy
+zplug "z-shell/zsh-diff-so-fancy", as:command, use:"bin/", defer:2
+
+# per directory history
+zplug "tymm/zsh-directory-history", defer:2
+zplug "tymm/zsh-directory-history", as:command, use:"dirhist", defer:2
+
+# magic directory change
+zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
+
+# theme
 zplug "romkatv/powerlevel10k", as:theme
