@@ -1,4 +1,4 @@
-MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
+export MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
 
 [ -n "$XDG_SESSION_ID" ] && _sid=$XDG_SESSION_ID
 [ -z "$_sid" ] && [ -n "$TERM_SESSION_ID" ] && _sid=$TERM_SESSION_ID
