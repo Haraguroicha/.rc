@@ -17,6 +17,7 @@ defer = { value = 'zsh-defer source "{{ file }}"', each = true }
 nanorc = { value = '${MY_RC_PATH}/.check-nanorc.sh', each = false }
 dirhist = { value = 'dirhist () { "{{ dir }}/dirhist" $* }', each = false }
 #wd = { value = 'wwd () { . "{{ dir }}/wd.sh" }; _wwd () { . "{{ dir }}/_wd.sh" }', each = false }
+reloadcompinit = { value = 'compinit', each = false }
 
 [plugins]
 
@@ -80,7 +81,7 @@ apply = ["defer", "dirhist"]
 # magic directory change
 [plugins.wd-sh]
 github = "mfaerevaag/wd"
-apply = ["fpath", "defer"]
+apply = ["fpath", "defer", "reloadcompinit"]
 #apply = ["wd"]
 [plugins.zsh-fuzzy-wd]
 github = "spodin/zsh-fuzzy-wd"
