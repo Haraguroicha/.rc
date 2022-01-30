@@ -14,9 +14,9 @@ shell = "zsh"
 
 [templates]
 defer = { value = 'zsh-defer source "{{ file }}"', each = true }
-nanorc = { value = 'rm ~/.nano ~/.nanorc; ln -sf "${SHELDON_DIR}/repos/github.com/scopatz/nanorc" ~/.nano; ln -sf ~/.nano/nanorc ~/.nanorc', each = false }
-wd = { value = 'wd () { . "{{ dir }}/wd.sh" }; _wd.sh () { . "{{ dir }}/_wd.sh" }', each = false }
+nanorc = { value = '${MY_RC_PATH}/.check-nanorc.sh', each = false }
 dirhist = { value = 'dirhist () { "{{ dir }}/dirhist" $* }', each = false }
+#wd = { value = 'wwd () { . "{{ dir }}/wd.sh" }; _wwd () { . "{{ dir }}/_wd.sh" }', each = false }
 
 [plugins]
 
@@ -80,9 +80,15 @@ apply = ["defer", "dirhist"]
 # magic directory change
 [plugins.wd-sh]
 github = "mfaerevaag/wd"
-apply = ["wd"]
+apply = ["fpath", "defer"]
+#apply = ["wd"]
 [plugins.zsh-fuzzy-wd]
 github = "spodin/zsh-fuzzy-wd"
+apply = ["defer"]
+
+# auto-completetions
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
 apply = ["defer"]
 
 # theme
