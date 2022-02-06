@@ -73,10 +73,11 @@ github = "z-shell/zsh-diff-so-fancy"
 use = ["bin/*"]
 apply = ["PATH"]
 
+# deprecated due to python2 and obsoleted repo
 # per directory history
-[plugins.zsh-directory-history]
-github = "tymm/zsh-directory-history"
-apply = ["defer", "dirhist"]
+#[plugins.zsh-directory-history]
+#github = "tymm/zsh-directory-history"
+#apply = ["defer", "dirhist"]
 
 # magic directory change
 [plugins.wd-sh]
