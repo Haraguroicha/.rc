@@ -17,7 +17,7 @@
 [gpg]
 	program = gpg2
 [alias]
-	dtv = "!f() { echo \"$(git describe --tag)-$(git rev-parse --short=8 HEAD)\"; }; f"
+	dtv = "!f() { echo \"$(git describe --tags --long --dirty --always)\"; }; f"
 	dif = "!f() { git diff | diff-so-fancy; }; f"
 	logs = log --show-signature
 	branch-prune = "!f() { \
