@@ -78,6 +78,9 @@ apply = ["PATH"]
 #[plugins.zsh-directory-history]
 #github = "tymm/zsh-directory-history"
 #apply = ["defer", "dirhist"]
+[plugins.zsh-directory-history]
+github = "Haraguroicha/zsh-directory-history"
+apply = ["defer", "dirhist"]
 
 # magic directory change
 [plugins.wd-sh]
