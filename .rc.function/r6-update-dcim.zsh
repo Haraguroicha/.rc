@@ -3,7 +3,8 @@
 r6-update-dcim () {
 	[[ -z "$FOLDER" ]] && export FOLDER=EOS_DIGITAL
 
-	(
+	[ ! -d "/Volumes/${FOLDER}/DCIM" ] && echo "DCIM folder or ${FOLDER} card doesn't exists"
+	[ -d "/Volumes/${FOLDER}/DCIM" ] && (
 		cd /Volumes/${FOLDER}/DCIM
 
 		mvtodate () {
