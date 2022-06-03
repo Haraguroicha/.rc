@@ -138,6 +138,7 @@ export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 #export PATH=$PATH:~/.composer/vendor/bin
 #export PATH=$PATH:/opt/letsencrypt
 #export PATH=~/.pyenv/bin:$PATH

@@ -13,7 +13,7 @@ brew install --cask osxfuse
 brew install \
 	zsh \
 	most \
-	coreutils \
+	coreutils grep \
 	ncdu \
 	mobile-shell \
 	mtr \
