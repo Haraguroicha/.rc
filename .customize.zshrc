@@ -102,7 +102,7 @@ import-rc-function
 
 # for gpg-agent on macOS, always uses curses to prompt gpg password when in ssh session
 if [ -n "$SSH_TTY" ]; then
-	export GPG_TTY=$(tty)
+	export GPG_TTY=$SSH_TTY
 	export PINENTRY_USER_DATA="USE_CURSES=1"
 fi
 
