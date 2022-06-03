@@ -92,7 +92,13 @@ brew install \
 	fzf sheldon \
 	fswatch \
 	diff-so-fancy \
-	direnv
+	direnv \
+	podman \
+	upx \
+	scc \
+	mongodb-community@5.0 \
+	telnet \
+
 
 [ ! -x '/Applications/Google Chrome.app' ] && brew install --cask google-chrome || echo "Google Chrome installed, ignored"
 [ ! -x '/Applications/Firefox.app' ] && brew install --cask firefox || echo "Firefox installed, ignored"
@@ -135,3 +141,4 @@ brew install --cask \
 	lens \
 	microsoft-azure-storage-explorer \
 #	sony-ps4-remote-play \
+	oxwu \
