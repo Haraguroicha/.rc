@@ -110,7 +110,7 @@ __cd_undo() { builtin popd;     echo; __call_precmds; zle reset-prompt }
 zle -N __cd_up;   bindkey '^[[1;2A' __cd_up
 zle -N __cd_undo; bindkey '^[[1;2B' __cd_undo
 
-alias g='go run .'
+#alias g='go run .'
 
 # command line snow effect
 function snow(){

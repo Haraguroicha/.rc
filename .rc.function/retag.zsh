@@ -48,7 +48,7 @@ LINE
 	done
 
 	echo -ne "Pulling from this compose file:\n$COMPOSE_FROM_YAML\n\n"
-	echo "$COMPOSE_FROM_YAML" | docker compose --ansi=always -f - pull
+	echo "$COMPOSE_FROM_YAML" | docker-compose --ansi=always -f - pull
 
 	while read -r line;
 	do
@@ -65,5 +65,5 @@ LINE
 	echo ""
 
 	echo -ne "Push from this compose file:\n$COMPOSE_TO_YAML\n\n"
-	echo "$COMPOSE_TO_YAML" | docker compose --ansi=always -f - push
+	echo "$COMPOSE_TO_YAML" | docker-compose --ansi=always -f - push
 }
