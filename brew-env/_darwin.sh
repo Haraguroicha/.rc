@@ -8,7 +8,9 @@ brew tap homebrew/cask-drivers
 brew tap heroku/brew
 brew tap gcenx/wine
 
-[ -n "$(uname -mp | grep arm)" ] && echo "You running on ARM-based macOS, install Rosetta instead" && sudo softwareupdate --install-rosetta --agree-to-license
+[ -n "$(uname -mp | grep arm)" ] && export AppleM=1 || AppleM=0
+
+[ "${AppleM}" == "1" ] && echo "You running on ARM-based macOS, install Rosetta instead" && sudo softwareupdate --install-rosetta --agree-to-license
 
 brew install --cask macfuse
 
@@ -101,7 +103,6 @@ brew install \
 	mongodb/brew/mongodb-community@5.0 \
 	telnet \
 
-
 [ ! -x '/Applications/Google Chrome.app' ] && brew install --cask google-chrome || echo "Google Chrome installed, ignored"
 [ ! -x '/Applications/Firefox.app' ] && brew install --cask firefox || echo "Firefox installed, ignored"
 [ ! -x '/Applications/Visual Studio Code.app' ] && brew install --cask visual-studio-code || echo "VS Code installed, ignored"
@@ -129,18 +130,24 @@ brew install --cask \
 	discord \
 	macpass \
 	iina \
-	google-drive-file-stream \
+	google-drive \
 	parallels \
 	adobe-creative-cloud \
 	telegram telegram-desktop \
 	unofficial-wineskin \
 	nrlquaker-winbox \
-	intel-power-gadget \
 	android-platform-tools \
 	canon-eos-utility \
 	canon-eos-webcam-utility \
 	font-jf-open-huninn \
 	lens \
-	microsoft-azure-storage-explorer \
+#	microsoft-azure-storage-explorer \
 #	sony-ps4-remote-play \
-	oxwu \
+
+# which not support with Apple Silicon
+if [ "${AppleM}" == "0" ]; then
+	brew install --cask \
+		intel-power-gadget \
+		oxwu \
+
+fi
