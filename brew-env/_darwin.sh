@@ -8,6 +8,8 @@ brew tap homebrew/cask-drivers
 brew tap heroku/brew
 brew tap gcenx/wine
 
+[ -n "$(uname -mp | grep arm)" ] && echo "You running on ARM-based macOS, install Rosetta instead" && echo "A" | sudo softwareupdate --install-rosetta
+
 brew install --cask osxfuse
 
 brew install \
