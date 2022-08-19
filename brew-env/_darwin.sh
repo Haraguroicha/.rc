@@ -10,7 +10,7 @@ brew tap gcenx/wine
 
 [ -n "$(uname -mp | grep arm)" ] && echo "You running on ARM-based macOS, install Rosetta instead" && echo "A" | sudo softwareupdate --install-rosetta
 
-brew install --cask osxfuse
+brew install --cask macfuse
 
 brew install \
 	zsh \
