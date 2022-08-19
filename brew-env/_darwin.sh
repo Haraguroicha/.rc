@@ -98,7 +98,7 @@ brew install \
 	podman \
 	upx \
 	scc \
-	mongodb-community@5.0 \
+	mongodb/brew/mongodb-community@5.0 \
 	telnet \
 
 
