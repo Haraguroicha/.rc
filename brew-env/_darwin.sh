@@ -102,6 +102,7 @@ brew install \
 	scc \
 	mongodb/brew/mongodb-community@5.0 \
 	telnet \
+	duf \
 
 brew install --cask \
 	1password \
