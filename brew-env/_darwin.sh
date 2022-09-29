@@ -59,7 +59,7 @@ brew install \
 	pv \
 	jpeg \
 	gnu-tar \
-	azure-cli \
+	azure-cli Azure/kubelogin/kubelogin \
 	kubernetes-cli \
 	libtool \
 	watch \
