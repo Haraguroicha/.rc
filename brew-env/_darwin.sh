@@ -105,7 +105,7 @@ brew install \
 	duf \
 
 brew install --cask \
-	1password \
+	1password 1password-cli \
 	google-chrome google-chrome-beta \
 	firefox \
 	visual-studio-code \
