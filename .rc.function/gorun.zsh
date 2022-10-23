@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 function g() {
-	set -Eexo pipefail
+	#set -Eexo pipefail
 	export DIR=$( cd "$( dirname "$0" )" && pwd )
 	export TIMESTAMP=$(date -u '+%Y-%m-%d_%H:%M:%S_%Z')
 	export DIRTY_FLAG="$([ "$(git diff --stat)" != "" ] && echo "-dirty")"
