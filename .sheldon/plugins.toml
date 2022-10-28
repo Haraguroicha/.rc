@@ -13,11 +13,15 @@
 shell = "zsh"
 
 [templates]
-defer = { value = 'zsh-defer source "{{ file }}"', each = true }
-nanorc = { value = '${MY_RC_PATH}/.check-nanorc.sh', each = false }
-dirhist = { value = 'dirhist () { "{{ dir }}/dirhist" $* }', each = false }
-#wd = { value = 'wwd () { . "{{ dir }}/wd.sh" }; _wwd () { . "{{ dir }}/_wd.sh" }', each = false }
-reloadcompinit = { value = 'compinit', each = false }
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+nanorc = '${MY_RC_PATH}/.check-nanorc.sh'
+dirhist = 'dirhist () { "{{ dir }}/dirhist" $* }'
+reloadcompinit = "compinit"
+#defer = { value = 'zsh-defer source "{{ file }}"', each = true }
+#nanorc = { value = '${MY_RC_PATH}/.check-nanorc.sh', each = false }
+#dirhist = { value = 'dirhist () { "{{ dir }}/dirhist" $* }', each = false }
+##wd = { value = 'wwd () { . "{{ dir }}/wd.sh" }; _wwd () { . "{{ dir }}/_wd.sh" }', each = false }
+#reloadcompinit = { value = 'compinit', each = false }
 
 [plugins]
 
