@@ -15,7 +15,7 @@ function g() {
 -X main.appVersion=${VERSION}
 -X main.buildDate=${TIMESTAMP}
 -X main.commitHash=${HASH}
--X main.tagName=${TAG_VERSION}${DIRTY_FLAG}
+-X main.tagName=${TAG_VERSION}
 FLAG
 ) | xargs`
 	go run -ldflags "${LD_FLAGS} -v" . "$@"
