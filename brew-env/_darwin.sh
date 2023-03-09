@@ -16,17 +16,12 @@ brew install --cask macfuse
 
 brew install \
 	zsh \
-	most \
-	coreutils grep \
-	ncdu \
+	telnet \
 	mobile-shell \
-	mtr \
 	nmap \
 	pyenv \
-	go \
 	govc \
-	tmux \
-	git \
+	hugo \
 	tree \
 	autoconf \
 	automake \
@@ -34,29 +29,13 @@ brew install \
 	openssl \
 	ffmpeg \
 	mas \
-	jq \
-	yq \
-	ansifilter \
-	htop \
 	libyubikey pam_yubico pam-u2f \
 	speedtest-cli \
-	ipcalc \
-	subnetcalc \
-	httping \
 	aria2 \
-	hugo \
-	nano \
 	imagemagick \
-	bash \
 	bash-git-prompt \
-	iperf3 \
-	ncurses \
-	dialog \
-	neofetch \
-	thefuck \
 	irssi \
 	bgpdump \
-	pv \
 	jpeg \
 	gnu-tar \
 	azure-cli Azure/kubelogin/kubelogin \
@@ -68,7 +47,6 @@ brew install \
 	nvm \
 	x264 x265 \
 	xvid \
-	xz \
 	yarn \
 	readline \
 	libusb libusb-compat \
@@ -89,22 +67,15 @@ brew install \
 	homebrew/cask/docker \
 	docker-compose \
 	helm \
-	hudochenkov/sshpass/sshpass \
 	InstantClientTap/instantclient/instantclient-basic InstantClientTap/instantclient/instantclient-sqlplus InstantClientTap/instantclient/instantclient-tools \
 	html-xml-utils \
 	expect moreutils \
-	fzf sheldon \
-	fswatch \
-	diff-so-fancy \
-	direnv \
-	podman \
-	upx \
 	scc \
 	mongodb/brew/mongodb-community@5.0 \
-	telnet \
 	duf \
 
 brew install --cask \
+	font-hack-nerd-font \
 	1password 1password-cli \
 	google-chrome google-chrome-beta \
 	firefox \
@@ -122,7 +93,6 @@ brew install --cask \
 	wireshark \
 	WebPQuickLook \
 	gpg-suite-no-mail \
-	font-hack-nerd-font \
 	mattermost \
 	discord \
 	macpass \
