@@ -59,7 +59,7 @@ alias c='clear'
 
 # Alias of ls
 #alias ls='ls -h --color=always'
-alias ls='ls -G'
+alias ls='ls -hG --color=always'
 alias l='ls -alh'
 
 # Alias of ping
