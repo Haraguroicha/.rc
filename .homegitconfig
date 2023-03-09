@@ -29,6 +29,8 @@
 	ignore = update-index --skip-worktree
 	unignore = update-index --no-skip-worktree
 	ignored = !git ls-files -v | grep ^S
+[push]
+	autoSetupRemote = true
 [pull]
 	rebase = true
 [interactive]
@@ -48,3 +50,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[url "git@git.walks.cloud:"]
+	insteadOf = https://git.walks.cloud/
