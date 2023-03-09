@@ -12,11 +12,11 @@ function g() {
 	export LD_FLAGS=`(cat << FLAG
 -s
 -w
--X main.appVersion=${VERSION}
--X main.buildDate=${TIMESTAMP}
--X main.commitHash=${HASH}
--X main.tagName=${TAG_VERSION}
+-X main.appVersion="${VERSION}"
+-X main.buildDate="${TIMESTAMP}"
+-X main.commitHash="${HASH}"
+-X main.tagName="${TAG_VERSION}"
 FLAG
 ) | xargs`
-	go run -ldflags "${LD_FLAGS} -v" . "$@"
+	go run -trimpath -gcflags "all=-trimpath=$DIR" -asmflags="all=-trimpath=$DIR" -ldflags "${LD_FLAGS} -v" -tags "${BUILD_TAGS}"  . "$@"
 }
