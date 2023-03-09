@@ -44,7 +44,7 @@ zstyle ':completion:*' menu select
 setopt menu_complete
 
 # Require root permission command
-[ "$(uname)" == "Darwin" ] && alias htop='sudo htop'
+[[ "$(uname)" == "Darwin" ]] && alias htop='sudo htop'
 alias mtr='sudo mtr'
 
 # Open multi files with vim tab
