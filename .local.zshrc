@@ -22,8 +22,8 @@ setopt correct
 #autoload -U compinit && compinit
 autoload -Uz compinit
 _zcompdump_modified_days=0
-[[ "$(uname)" == "Darwin" ]] && _zcompdump_modified_days="$(stat -f '%Sm' -t '%j' ~/.zcompdump))"
-[[ "$(uname)" == "Linux" ]] && _zcompdump_modified_days="$(date +'%j' -d "@$(stat --format '%Y' ~/.zcompdump)")"
+[[ "${_UNAME}" == "Darwin" ]] && _zcompdump_modified_days="$(stat -f '%Sm' -t '%j' ~/.zcompdump))"
+[[ "${_UNAME}" == "Linux" ]] && _zcompdump_modified_days="$(date +'%j' -d "@$(stat --format '%Y' ~/.zcompdump)")"
 if [ "$(date +'%j')" != "${_zcompdump_modified_days}" ]; then
   compinit
 else
@@ -44,7 +44,7 @@ zstyle ':completion:*' menu select
 setopt menu_complete
 
 # Require root permission command
-[[ "$(uname)" == "Darwin" ]] && alias htop='sudo htop'
+[[ "${_UNAME}" == "Darwin" ]] && alias htop='sudo htop'
 alias mtr='sudo mtr'
 
 # Open multi files with vim tab

@@ -8,8 +8,6 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
-[[ "$(uname)" != "Linux" ]] && export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
-[[ "$(uname)" == "Linux" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -113,7 +111,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export _UNAME="$(uname)"
+[[ "${_UNAME}" != "Linux" ]] && export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
+[[ "${_UNAME}" == "Linux" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
+unset _UNAME
 
 [ "${TERM_PROGRAM}" = "iTerm.app" ] && [ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 [ "${TERM_PROGRAM}" = "iTerm.app" ] && test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
