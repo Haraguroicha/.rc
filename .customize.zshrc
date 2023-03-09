@@ -4,6 +4,7 @@ export MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
 [ -z "$_sid" ] && [ -n "$TERM_SESSION_ID" ] && _sid=$TERM_SESSION_ID
 [ -z "$_sid" ] && _sid=${$(uuidgen):l}
 [ -z "$_sid" ] && _sid=$(echo $RANDOM | md5sum | head -c 20)
+[ -z "${TMPDIR}" ] && export TMPDIR="${XDG_RUNTIME_DIR:-${TMPDIR:-${TMP:-${TEMP:-/tmp}}}}"
 _neofetch_tmp=${TMPDIR}/_tmp_neofetch_sid_${_sid}.txt
 _neofetch () {
 	if [ -f "$_neofetch_tmp" ]; then
@@ -99,6 +100,7 @@ my-rc-update () {
 
 source $MY_RC_PATH/.import-rc-function.zsh
 import-rc-function
+eval "$(op completion zsh)"; compdef _op op
 
 # for gpg-agent on macOS, always uses curses to prompt gpg password when in ssh session
 if [ -n "$SSH_TTY" ]; then

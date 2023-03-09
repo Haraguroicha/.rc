@@ -5,7 +5,8 @@ HISTFILE=~/.zsh_history
 
 export PAGER="most"
 setopt prompt_subst
-export TERM="screen-256color"
+#export TERM="screen-256color"
+export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -20,7 +21,10 @@ setopt SHARE_HISTORY # Share history between session/terminals
 setopt correct
 #autoload -U compinit && compinit
 autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+_zcompdump_modified_days=0
+[[ "$(uname)" == "Darwin" ]] && _zcompdump_modified_days="$(stat -f '%Sm' -t '%j' ~/.zcompdump))"
+[[ "$(uname)" == "Linux" ]] && _zcompdump_modified_days="$(date +'%j' -d "@$(stat --format '%Y' ~/.zcompdump)")"
+if [ "$(date +'%j')" != "${_zcompdump_modified_days}" ]; then
   compinit
 else
   compinit -C
