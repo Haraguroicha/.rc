@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 da () {
 	if [ -x "$(which direnv)" ]; then

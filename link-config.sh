@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
 cd "$HOME"

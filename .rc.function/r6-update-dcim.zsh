@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 r6-update-dcim () {
 	[[ -z "$FOLDER" ]] && export FOLDER=EOS_DIGITAL

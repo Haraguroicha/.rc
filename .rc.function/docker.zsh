@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 OLD_DOCKER_BIN=$(which docker)
 

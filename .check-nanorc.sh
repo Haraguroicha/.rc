@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 DIR=$(dirname $(readlink ~/.zshrc))
 
