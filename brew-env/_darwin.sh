@@ -92,6 +92,9 @@ brew install --cask \
 	onyx \
 	wireshark \
 	WebPQuickLook \
+	# https://github.com/sindresorhus/quick-look-plugins \
+	qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency qlvideo \
+	mupdf \
 	gpg-suite-no-mail \
 	mattermost \
 	discord \
