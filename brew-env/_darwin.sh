@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[ ! -x "$(which brew)" ] && [ -x "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 #brew cask
 #brew tap caskroom/versions
 brew tap homebrew/cask-versions
