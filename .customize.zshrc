@@ -75,7 +75,7 @@ bindkey '^j' directory-history-search-backward
 bindkey '^k' directory-history-search-forward
 
 alias sudoedit='sudo nano'
-alias ncdu='sudo /usr/local/bin/ncdu --si --exclude /System/Volumes/Data --exclude /Volumes'
+alias ncdu='sudo $(brew --prefix)/bin/ncdu --si --exclude /System/Volumes/Data --exclude /Volumes'
 
 _ipcalc () {
 	[[ "$#" -gt "0" ]] && (
