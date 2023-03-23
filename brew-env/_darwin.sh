@@ -12,7 +12,15 @@ brew tap gcenx/wine
 
 [ -n "$(uname -mp | grep arm)" ] && export AppleM=1 || AppleM=0
 
-[ "${AppleM}" == "1" ] && echo "You running on ARM-based macOS, install Rosetta instead" && sudo softwareupdate --install-rosetta --agree-to-license
+if [[ "${AppleM}" == "1" ]]; then
+	if [[ -z "$(arch -arch x86_64 sysctl -in sysctl.proc_translated 2>/dev/null)" ]]; then
+		echo "You running on ARM-based macOS, install Rosetta instead"
+		sudo softwareupdate --install-rosetta --agree-to-license
+	else
+		echo "You have installed Rosetta, ignore for installer"
+	fi
+fi
+
 
 brew install --cask macfuse
 
