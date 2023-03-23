@@ -83,6 +83,7 @@ brew install \
 	scc \
 	mongodb/brew/mongodb-community@5.0 \
 	duf \
+	mupdf \
 
 brew install --cask \
 	font-hack-nerd-font \
@@ -101,10 +102,6 @@ brew install --cask \
 	istat-menus \
 	onyx \
 	wireshark \
-	WebPQuickLook \
-	# https://github.com/sindresorhus/quick-look-plugins \
-	qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency qlvideo \
-	mupdf \
 	gpg-suite-no-mail \
 	mattermost \
 	discord \
@@ -121,6 +118,9 @@ brew install --cask \
 	canon-eos-webcam-utility \
 	font-jf-open-huninn \
 	lens \
+	WebPQuickLook \
+	qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency qlvideo \
+	# https://github.com/sindresorhus/quick-look-plugins \
 #	microsoft-azure-storage-explorer \
 #	sony-ps4-remote-play \
 
