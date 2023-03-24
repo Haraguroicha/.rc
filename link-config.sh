@@ -12,5 +12,7 @@ lnsf .tmux.conf .tmux.conf
 lnsf .bashrc-env .bashrc-env
 lnsf .homegitconfig .gitconfig
 lnsf .homeenvrc .envrc
+sudo chown 0:0 ./sudoers.d/mtr
+sudo ln -sf ./sudoers.d/mtr /etc/sudoers.d/mtr
 
 da
