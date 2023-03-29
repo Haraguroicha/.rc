@@ -40,7 +40,7 @@ brew install \
 	ffmpeg \
 	mas \
 	libyubikey pam_yubico pam-u2f \
-	speedtest-cli \
+	teamookla/speedtest/speedtest \
 	aria2 \
 	imagemagick \
 	bash-git-prompt \
