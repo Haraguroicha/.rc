@@ -9,6 +9,7 @@ i () {
 	mas install $id
 }
 
+i 1230249825	"VMware Remote Console"
 i 638161122	"YubiKey Personalization Tool"
 i 425264550	"Blackmagic Disk Speed Test"
 i 539883307	"LINE"
