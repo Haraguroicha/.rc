@@ -122,6 +122,7 @@ brew install --cask \
 	qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency qlvideo \
 	sony-ps-remote-play \
 	microsoft-remote-desktop \
+	keka \
 	# https://github.com/sindresorhus/quick-look-plugins \
 #	microsoft-azure-storage-explorer \
 
