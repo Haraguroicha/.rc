@@ -120,9 +120,9 @@ brew install --cask \
 	lens \
 	WebPQuickLook \
 	qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency qlvideo \
+	sony-ps-remote-play \
 	# https://github.com/sindresorhus/quick-look-plugins \
 #	microsoft-azure-storage-explorer \
-#	sony-ps4-remote-play \
 
 # which not support with Apple Silicon
 if [ "${AppleM}" == "0" ]; then
