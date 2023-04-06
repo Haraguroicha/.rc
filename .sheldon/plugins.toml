@@ -62,9 +62,9 @@ apply = ["defer"]
 #apply = ["defer"]
 
 # esc twice to prepend sudo
-[plugins.zsh-sudo]
-github = "hcgraf/zsh-sudo"
-apply = ["defer"]
+#[plugins.zsh-sudo]
+#github = "hcgraf/zsh-sudo"
+#apply = ["defer"]
 
 # nano color format
 [plugins.nanorc]
