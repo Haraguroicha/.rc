@@ -64,6 +64,7 @@ alias l='ls -alh'
 
 # Alias of ping
 alias p=newPing
+alias p6=newPing6
 
 # Alias of mtr
 alias m=newMtr
@@ -80,6 +81,13 @@ function newPing(){
         ping 8.8.8.8
     else
         ping $*
+    fi
+}
+function newPing6(){
+    if [ -z "$1" ]; then
+        ping6 2001:4860:4860::8888
+    else
+        ping6 $*
     fi
 }
 
