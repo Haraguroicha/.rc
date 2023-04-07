@@ -52,3 +52,8 @@
 	whitespace = red reverse
 [url "git@git.walks.cloud:"]
 	insteadOf = https://git.walks.cloud/
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
