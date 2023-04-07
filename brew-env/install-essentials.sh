@@ -17,7 +17,8 @@ brew install xz ansifilter most fzf sheldon fswatch \
 	diff-so-fancy direnv upx podman mtr ncdu git jq yq go \
 	tmux htop ipcalc subnetcalc httping nano bash iperf3 \
 	coreutils grep ncurses dialog neofetch thefuck pv \
-	gcc hudochenkov/sshpass/sshpass
+	gcc hudochenkov/sshpass/sshpass \
+	gping
 
 case $OSTYPE in
 	Darwin)
