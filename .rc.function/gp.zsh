@@ -5,7 +5,8 @@ gp () {
 		shift
 		gping $*
 	else
-		gping $(echo -e "$(netstat -nr | grep default | egrep -v '%|#' | awk '{print $2}')
+		gping $(echo -e "$(ipconfig getoption '' router)
+$(netstat -nr | grep default | egrep -v '%|#' | awk '{print $2}')
 $(ipconfig getoption "" domain_name_server)
 $(traceroute -n -w1 -m1 -q1 1.1.1.1 2>&1 | grep -v traceroute | awk '{print $2}')
 $(traceroute -n -w1 -m1 -q1 8.8.8.8 2>&1 | grep -v traceroute | awk '{print $2}')
