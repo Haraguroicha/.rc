@@ -1,3 +1,4 @@
+export EMAIL=haraguroicha@tipsy.coffee
 export GIT_AUTHOR_EMAIL=haraguroicha@tipsy.coffee
 export GIT_COMMITTER_EMAIL=haraguroicha@tipsy.coffee
 
