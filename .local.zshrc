@@ -19,6 +19,7 @@ setopt INC_APPEND_HISTORY # Add immediately
 setopt NO_HIST_BEEP # Don't beep
 setopt SHARE_HISTORY # Share history between session/terminals
 setopt correct
+setopt no_nomatch # for matches glob, e.g. * and ?
 #autoload -U compinit && compinit
 autoload -Uz compinit
 _zcompdump_modified_days=0
