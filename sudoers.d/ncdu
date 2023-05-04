@@ -1,0 +1,2 @@
+%staff	ALL=NOPASSWD:	/usr/local/bin/ncdu
+%staff	ALL=NOPASSWD:	/opt/homebrew/bin/ncdu
