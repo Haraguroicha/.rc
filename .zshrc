@@ -114,8 +114,7 @@ source $ZSH/oh-my-zsh.sh
 export _UNAME="$(uname)"
 [[ "${_UNAME}" != "Linux" ]] && export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
 [[ "${_UNAME}" == "Linux" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
-unset _UNAME
-
 [ "${TERM_PROGRAM}" = "iTerm.app" ] && [ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 [ "${TERM_PROGRAM}" = "iTerm.app" ] && test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
+unset _UNAME
