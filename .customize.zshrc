@@ -5,6 +5,12 @@ export MY_RC_PATH=$(dirname $(readlink ~/.zshrc))
 [ -z "$_sid" ] && _sid=${$(uuidgen):l}
 [ -z "$_sid" ] && _sid=$(echo $RANDOM | md5sum | head -c 20)
 [ -z "${TMPDIR}" ] && export TMPDIR="${XDG_RUNTIME_DIR:-${TMPDIR:-${TMP:-${TEMP:-/tmp}}}}"
+
+export SHELDON_DIR=$MY_RC_PATH/.sheldon
+export SHELDON_CONFIG_DIR=$SHELDON_DIR
+export SHELDON_DATA_DIR=$SHELDON_DIR
+eval "$(sheldon source)"
+
 _neofetch_tmp=${TMPDIR}/_tmp_neofetch_sid_${_sid}.txt
 _neofetch () {
 	if [ -f "$_neofetch_tmp" ]; then
@@ -23,11 +29,6 @@ NFS
 clear-screen() { echoti clear; rm "$_neofetch_tmp"; _neofetch; zle redisplay; }
 zle -N clear-screen
 _neofetch
-
-export SHELDON_DIR=$MY_RC_PATH/.sheldon
-export SHELDON_CONFIG_DIR=$SHELDON_DIR
-export SHELDON_DATA_DIR=$SHELDON_DIR
-eval "$(sheldon source)"
 
 #export ZPLUG_HOME=$(brew --prefix zplug)
 #[ -f "$ZPLUG_HOME/init.zsh" ] && source $ZPLUG_HOME/init.zsh
