@@ -86,7 +86,7 @@ brew install \
 	mupdf \
 
 brew install --cask \
-	font-hack-nerd-font \
+	font-hack-nerd-font font-meslo-for-powerline font-meslo-lg-nerd-font \
 	1password 1password-cli \
 	google-chrome google-chrome-beta \
 	firefox \
