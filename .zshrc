@@ -111,10 +111,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+function check_iterm2_shell_integration() {
+	[ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+}
+
 export _UNAME="$(uname)"
 [[ "${_UNAME}" != "Linux" ]] && export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
 [[ "${_UNAME}" == "Linux" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-[ "${TERM_PROGRAM}" = "iTerm.app" ] && [ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
-[ "${TERM_PROGRAM}" = "iTerm.app" ] && test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+[ "${LC_TERMINAL}" = "iTerm2" ] && check_iterm2_shell_integration
+[ "${TERM_PROGRAM}" = "iTerm.app" ] && check_iterm2_shell_integration
 source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
 unset _UNAME
+unset check_iterm2_shell_integration
