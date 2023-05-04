@@ -91,7 +91,7 @@ alias read-qr='sleep .5; (screencapture -i $TMPDIR/screencapture.qrcode.png && z
 
 my-rc-update-git () {
 	(
-		cd "${MY_RC_PATH}"
+		cd "$(dirname $(readlink ~/.zshrc))"
 		git $*
 	)
 }
@@ -99,7 +99,7 @@ my-rc-update () {
 	my-rc-update-git pull
 }
 
-source $MY_RC_PATH/.import-rc-function.zsh
+source "${MY_RC_PATH}/.import-rc-function.zsh"
 import-rc-function
 eval "$(op completion zsh)"; compdef _op op
 
@@ -151,3 +151,5 @@ export MANPAGER='most -s'
 #	async_job watch_zplugs __killfswatch
 #}
 #_zplugs_new_job
+
+unset MY_RC_PATH
