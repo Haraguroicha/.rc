@@ -123,8 +123,9 @@ brew install --cask \
 	sony-ps-remote-play \
 	microsoft-remote-desktop \
 	keka \
+	uninstallpkg \
 	# https://github.com/sindresorhus/quick-look-plugins \
-#	microsoft-azure-storage-explorer \
+	# microsoft-azure-storage-explorer \
 
 # which not support with Apple Silicon
 if [ "${AppleM}" == "0" ]; then
