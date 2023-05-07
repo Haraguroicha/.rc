@@ -20,6 +20,7 @@
 	dtv = "!f() { echo \"$(git describe --tags --long --dirty --always)\"; }; f"
 	dif = "!f() { git diff | diff-so-fancy; }; f"
 	logs = log --show-signature
+	lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an (%ce)>%Creset %C(magenta)(Signed: %G?)' --abbrev-commit
 	branch-prune = "!f() { \
 				export LC_ALL=en_US.UTF-8; \
 				git remote prune origin; \
