@@ -17,7 +17,7 @@ lnsf .homeenvrc .envrc
 
 cd "${DIR}"
 sudo chown -vR 0:0 ./sudoers.d/*
-sudo ln -sf ./sudoers.d/mtr /etc/sudoers.d/mtr
-sudo ln -sf ./sudoers.d/ncdu /etc/sudoers.d/ncdu
+sudo ln -sf "${DIR}/sudoers.d/mtr" /etc/sudoers.d/mtr
+sudo ln -sf "${DIR}/sudoers.d/ncdu" /etc/sudoers.d/ncdu
 
 da
