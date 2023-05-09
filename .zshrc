@@ -117,10 +117,19 @@ function check_iterm2_shell_integration() {
 }
 
 export _UNAME="$(uname)"
-[[ "${_UNAME}" != "Linux" ]] && export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
+if [[ "${_UNAME}" != "Linux" ]]; then
+	[ -n "$(uname -mp | grep arm)" ] && export AppleM=1 || AppleM=0
+	if [[ "${AppleM}" == "1" ]]; then
+		export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:$PATH
+	else
+		export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+	fi
+	eval "$(brew shellenv)"
+fi
 [[ "${_UNAME}" == "Linux" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [ "${LC_TERMINAL}" = "iTerm2" ] && check_iterm2_shell_integration
 [ "${TERM_PROGRAM}" = "iTerm.app" ] && check_iterm2_shell_integration
 source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
+unset AppleM
 unset _UNAME
 unset check_iterm2_shell_integration
