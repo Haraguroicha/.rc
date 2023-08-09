@@ -111,7 +111,7 @@ brew install --cask \
 	parallels \
 	adobe-creative-cloud \
 	telegram telegram-desktop \
-	unofficial-wineskin \
+	wineskin \
 	nrlquaker-winbox \
 	android-platform-tools \
 	canon-eos-utility \
