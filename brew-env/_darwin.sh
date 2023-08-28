@@ -72,6 +72,7 @@ brew install \
 	expect moreutils \
 	scc \
 	duf \
+	gping \
 #	mobile-shell \
 #	govc \
 #	libyubikey ykpers pam_yubico pam-u2f \
