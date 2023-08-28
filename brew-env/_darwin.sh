@@ -7,7 +7,7 @@
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-drivers
-brew tap heroku/brew
+#brew tap heroku/brew
 brew tap gcenx/wine
 
 [ -n "$(uname -mp | grep arm)" ] && export AppleM=1 || AppleM=0
@@ -27,19 +27,15 @@ brew install --cask macfuse
 brew install \
 	zsh \
 	telnet \
-	mobile-shell \
 	nmap \
 	pyenv \
-	govc \
 	hugo \
 	tree \
-	autoconf \
-	automake \
+	autoconf automake \
 	node \
 	openssl \
 	ffmpeg \
 	mas \
-	libyubikey pam_yubico pam-u2f \
 	teamookla/speedtest/speedtest \
 	aria2 \
 	imagemagick \
@@ -48,7 +44,6 @@ brew install \
 	bgpdump \
 	jpeg \
 	gnu-tar \
-	azure-cli Azure/kubelogin/kubelogin \
 	kubernetes-cli \
 	libtool \
 	watch \
@@ -57,7 +52,6 @@ brew install \
 	nvm \
 	x264 x265 \
 	xvid \
-	yarn \
 	readline \
 	libusb libusb-compat \
 	openjpeg \
@@ -65,25 +59,30 @@ brew install \
 	opus \
 	lzo \
 	vault \
-	heroku heroku-node \
 	exiftool \
 	ext4fuse \
 	flac \
 	gnupg \
 	gnupg2 \
 	pinentry-mac \
-	cocoapods \
 	iproute2mac \
-	homebrew/cask/docker \
 	docker-compose \
 	helm \
-	InstantClientTap/instantclient/instantclient-basic InstantClientTap/instantclient/instantclient-sqlplus InstantClientTap/instantclient/instantclient-tools \
 	html-xml-utils \
 	expect moreutils \
 	scc \
-	mongodb/brew/mongodb-community@5.0 \
 	duf \
-	mupdf \
+#	mobile-shell \
+#	govc \
+#	libyubikey ykpers pam_yubico pam-u2f \
+#	mongodb/brew/mongodb-community@5.0 \
+#	azure-cli Azure/kubelogin/kubelogin \
+#	yarn \
+#	cocoapods \
+#	homebrew/cask/docker \
+#	mupdf \
+#	InstantClientTap/instantclient/instantclient-basic InstantClientTap/instantclient/instantclient-sqlplus InstantClientTap/instantclient/instantclient-tools \
+#	heroku heroku-node \
 
 brew install --cask \
 	font-hack-nerd-font font-meslo-for-powerline font-meslo-lg-nerd-font \
@@ -96,7 +95,6 @@ brew install --cask \
 	dropbox \
 	bartender \
 	iterm2 \
-	macdown \
 	coconutbattery \
 	shimo \
 	istat-menus \
@@ -117,13 +115,15 @@ brew install --cask \
 	canon-eos-utility \
 	canon-eos-webcam-utility \
 	font-jf-open-huninn \
-	lens \
 	WebPQuickLook \
 	qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency qlvideo \
 	sony-ps-remote-play \
 	microsoft-remote-desktop \
 	keka \
 	uninstallpkg \
+	choosy \
+#	lens \
+#	macdown \
 	# https://github.com/sindresorhus/quick-look-plugins \
 	# microsoft-azure-storage-explorer \
 

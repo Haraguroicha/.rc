@@ -7,7 +7,6 @@ brew tap homebrew/linux-fonts
 brew install \
 	font-hack-nerd-font \
 	util-linux \
-	vault \
 	hugo \
 	goenv \
 	opus \
@@ -25,7 +24,6 @@ brew install \
 	rclone \
 	readline \
 	openssl \
-	openjdk \
 	openjpeg \
 	nvm \
 	node \
@@ -43,17 +41,18 @@ brew install \
 	json-c \
 	jpeg \
 	itstool \
-	irssi \
-	influxdb \
-	heroku \
 	gnutls \
 	gettext \
 	ffmpeg \
 	flac \
 	fontforge \
 	bzip2 \
-	automake \
-	autoconf \
+	automake autoconf \
+#	irssi \
+#	vault \
+#	openjdk \
+#	influxdb \
+#	heroku \
 	# adoptopenjdk \
 
 sudo ln -s /home/linuxbrew/.linuxbrew/share/fonts /usr/local/share/fonts/
