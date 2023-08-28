@@ -73,6 +73,7 @@ brew install \
 	scc \
 	duf \
 	gping \
+	btop \
 #	mobile-shell \
 #	govc \
 #	libyubikey ykpers pam_yubico pam-u2f \
