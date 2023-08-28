@@ -74,6 +74,7 @@ brew install \
 	duf \
 	gping \
 	btop \
+	exa \
 #	mobile-shell \
 #	govc \
 #	libyubikey ykpers pam_yubico pam-u2f \
