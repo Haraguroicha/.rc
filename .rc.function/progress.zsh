@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
 
 progress () {
-	progress -MW1 "$@"
+	$(brew --prefix progress)/bin/progress -MW1 "$@"
 }
