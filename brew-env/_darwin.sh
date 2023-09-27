@@ -77,6 +77,7 @@ brew install \
 	exa \
 	bat \
 	progress \
+	oven-sh/bun/bun \
 #	mobile-shell \
 #	govc \
 #	libyubikey ykpers pam_yubico pam-u2f \
