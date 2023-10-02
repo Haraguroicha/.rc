@@ -128,6 +128,7 @@ brew install --cask \
 	keka \
 	uninstallpkg \
 	choosy \
+	haraguroicha/brew/caffeine \
 #	lens \
 #	macdown \
 	# https://github.com/sindresorhus/quick-look-plugins \
