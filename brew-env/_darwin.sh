@@ -2,14 +2,6 @@
 
 [ ! -x "$(which brew)" ] && [ -x "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-#brew cask
-#brew tap caskroom/versions
-brew tap homebrew/cask-versions
-brew tap homebrew/cask-fonts
-brew tap homebrew/cask-drivers
-#brew tap heroku/brew
-brew tap gcenx/wine
-
 [ -n "$(uname -mp | grep arm)" ] && export AppleM=1 || AppleM=0
 
 if [[ "${AppleM}" == "1" ]]; then
@@ -48,7 +40,7 @@ brew install \
 	libtool \
 	watch \
 	webp \
-	rclone \
+	brettferdosi/tap/rclone-cask \
 	nvm \
 	x264 x265 \
 	xvid \
@@ -78,6 +70,7 @@ brew install \
 	bat \
 	progress \
 	oven-sh/bun/bun \
+	hudochenkov/sshpass/sshpass \
 	rust \
 #	mobile-shell \
 #	govc \
@@ -92,9 +85,12 @@ brew install \
 #	heroku heroku-node \
 
 brew install --cask \
-	font-hack-nerd-font font-meslo-for-powerline font-meslo-lg-nerd-font \
+	homebrew/cask-fonts/font-hack-nerd-font \
+	homebrew/cask-fonts/font-jf-open-huninn \
+	homebrew/cask-fonts/font-meslo-for-powerline \
+	homebrew/cask-fonts/font-meslo-lg-nerd-font \
 	1password 1password-cli \
-	google-chrome google-chrome-beta \
+	google-chrome homebrew/cask-versions/google-chrome-beta \
 	firefox \
 	visual-studio-code \
 	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
@@ -116,12 +112,11 @@ brew install --cask \
 	parallels \
 	adobe-creative-cloud \
 	telegram telegram-desktop \
-	wineskin \
+	gcenx/wine/wineskin \
 	nrlquaker-winbox \
 	android-platform-tools \
 	canon-eos-utility \
 	canon-eos-webcam-utility \
-	font-jf-open-huninn \
 	WebPQuickLook \
 	qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency qlvideo \
 	sony-ps-remote-play \
