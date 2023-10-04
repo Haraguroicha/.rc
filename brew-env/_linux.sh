@@ -1,4 +1,5 @@
 #!/bin/bash
+set -Eeou pipefail
 
 sudo apt install -y --auto-remove build-essential procps curl file git zsh
 
@@ -56,7 +57,12 @@ brew install \
 #	heroku \
 #	adoptopenjdk \
 
-sudo ln -s /home/linuxbrew/.linuxbrew/share/fonts /usr/local/share/fonts/
+if [[ ! -L "/usr/local/share/fonts" ]]; then
+	sudo rm -f /usr/local/share/fonts/.uuid
+	sudo rm -f /usr/local/share/fonts/*
+	sudo rmdir /usr/local/share/fonts
+fi
+sudo ln -sf /home/linuxbrew/.linuxbrew/share/fonts /usr/local/share/
 sudo fc-cache -fv
 
 # install 1Password GUI
