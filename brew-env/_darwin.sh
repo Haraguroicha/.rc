@@ -95,7 +95,6 @@ brew install --cask \
 	visual-studio-code \
 	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
 	alfred \
-	dropbox \
 	bartender \
 	iterm2 \
 	coconutbattery \
@@ -125,10 +124,11 @@ brew install --cask \
 	uninstallpkg \
 	choosy \
 	haraguroicha/brew/caffeine \
+#	dropbox \
 #	lens \
 #	macdown \
-	# https://github.com/sindresorhus/quick-look-plugins \
-	# microsoft-azure-storage-explorer \
+#	https://github.com/sindresorhus/quick-look-plugins \
+#	microsoft-azure-storage-explorer \
 
 # which not support with Apple Silicon
 if [ "${AppleM}" == "0" ]; then
