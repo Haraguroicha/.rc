@@ -127,6 +127,7 @@ if [[ "${_UNAME}" != "Linux" ]]; then
 	eval "$(brew shellenv)"
 fi
 [[ "${_UNAME}" == "Linux" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[[ -d "$HOME/.cargo/bin" ]] && export PATH=$HOME/.cargo/bin:$PATH
 [ "${LC_TERMINAL}" = "iTerm2" ] && check_iterm2_shell_integration
 [ "${TERM_PROGRAM}" = "iTerm.app" ] && check_iterm2_shell_integration
 source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
