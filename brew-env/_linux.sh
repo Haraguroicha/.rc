@@ -48,12 +48,13 @@ brew install \
 	fontforge \
 	bzip2 \
 	automake autoconf \
+	rust \
 #	irssi \
 #	vault \
 #	openjdk \
 #	influxdb \
 #	heroku \
-	# adoptopenjdk \
+#	adoptopenjdk \
 
 sudo ln -s /home/linuxbrew/.linuxbrew/share/fonts /usr/local/share/fonts/
 sudo fc-cache -fv
