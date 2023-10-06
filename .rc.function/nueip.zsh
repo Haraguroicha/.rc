@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-nueip() {
+nueip () {
   [[ -z "$1" ]] && echo "Try input in/1/out/2" && return 1
   env_ok=0
   [[ -n "${NUEIP_COMPANY}" ]] && [[ -n "${NUEIP_ID}" ]] && [[ -n "${NUEIP_PASS}" ]] && [[ -n "${NUEIP_LAT}" ]] && [[ -n "${NUEIP_LNG}" ]] && env_ok=1

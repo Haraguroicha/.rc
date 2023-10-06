@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-function g() {
+g () {
 	#set -Eexo pipefail
 	export DIR=$( cd "$( dirname "$0" )" && pwd )
 	export TIMESTAMP=$(date -u '+%Y-%m-%d_%H:%M:%S_%Z')

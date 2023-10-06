@@ -2,17 +2,18 @@
 
 r6-update-dcim () {
 	[[ -z "$FOLDER" ]] && export FOLDER=EOS_DIGITAL
+	TARGET_FOLDER="/Volumes/${FOLDER}/DCIM"
 
-	[ ! -d "/Volumes/${FOLDER}/DCIM" ] && echo "DCIM folder or ${FOLDER} card doesn't exists"
-	[ -d "/Volumes/${FOLDER}/DCIM" ] && (
-		cd /Volumes/${FOLDER}/DCIM
+	[ ! -d "${TARGET_FOLDER}" ] && echo "DCIM folder or ${FOLDER} card doesn't exists"
+	[ -d "${TARGET_FOLDER}" ] && (
+		cd "${TARGET_FOLDER}"
 
 		mvtodate () {
 			if [ -n "$1" ]; then
 				d=$(exiftool -j "$1" | jq -r '.[].DateTimeOriginal | split(" ")[0] | gsub(":"; "")')
-				[ ! -d "/Volumes/${FOLDER}/DCIM/${d}" ] && echo mkdir -p "/Volumes/${FOLDER}/DCIM/${d}" && mkdir -p "/Volumes/${FOLDER}/DCIM/${d}"
-				echo mv "$1" "/Volumes/${FOLDER}/DCIM/${d}"
-				mv "$1" "/Volumes/${FOLDER}/DCIM/${d}"
+				[ ! -d "${TARGET_FOLDER}/${d}" ] && echo mkdir -p "${TARGET_FOLDER}/${d}" && mkdir -p "${TARGET_FOLDER}/${d}"
+				echo mv "$1" "${TARGET_FOLDER}/${d}"
+				mv "$1" "${TARGET_FOLDER}/${d}"
 			else
 				echo "empty imput"
 			fi

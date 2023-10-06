@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-function matrix() {
+matrix () {
 	(while :; do
 		echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $(printf "\U$(($RANDOM % 500))")
 		sleep 0.05
