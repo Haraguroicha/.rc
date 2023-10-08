@@ -10,6 +10,9 @@ export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+[ -d "$HOME/.HaraguroichaTools/.completion" ] && fpath=("$HOME/.HaraguroichaTools/.completion" "${fpath[@]}")
+[ -f "$HOME/.HaraguroichaTools/cheat-menu.compdef.zsh" ] && source "$HOME/.HaraguroichaTools/cheat-menu.compdef.zsh"
+
 autoload -Uz promptinit
 promptinit
 setopt histignorealldups sharehistory
