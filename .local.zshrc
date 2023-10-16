@@ -10,8 +10,8 @@ export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-[ -d "$HOME/.HaraguroichaTools/.completion" ] && fpath=("$HOME/.HaraguroichaTools/.completion" "${fpath[@]}")
-[ -f "$HOME/.HaraguroichaTools/cheat-menu.compdef.zsh" ] && source "$HOME/.HaraguroichaTools/cheat-menu.compdef.zsh"
+cheat_menu_compdef="$HOME/.HaraguroichaTools/cheat-menu.compdef.zsh"
+[[ -f "${cheat_menu_compdef}" ]] && source "${cheat_menu_compdef}"
 
 autoload -Uz promptinit
 promptinit
