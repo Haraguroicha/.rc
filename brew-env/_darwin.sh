@@ -84,7 +84,7 @@ brew install --force --overwrite \
 #	InstantClientTap/instantclient/instantclient-basic InstantClientTap/instantclient/instantclient-sqlplus InstantClientTap/instantclient/instantclient-tools \
 #	heroku heroku-node \
 
-brew install --cask \
+brew install --cask --force \
 	homebrew/cask-fonts/font-hack-nerd-font \
 	homebrew/cask-fonts/font-jf-open-huninn \
 	homebrew/cask-fonts/font-meslo-for-powerline \
