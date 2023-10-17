@@ -16,7 +16,7 @@ fi
 
 brew install --cask macfuse
 
-brew install \
+brew install --force --overwrite \
 	zsh \
 	telnet \
 	nmap \
