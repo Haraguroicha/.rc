@@ -101,7 +101,7 @@ my-rc-update () {
 
 source "${MY_RC_PATH}/.import-rc-function.zsh"
 import-rc-function
-eval "$(op completion zsh)"; compdef _op op
+[[ -x "$(which op)" ]] && eval "$(op completion zsh)"; compdef _op op
 
 # for gpg-agent on macOS, always uses curses to prompt gpg password when in ssh session
 if [ -n "$SSH_TTY" ]; then
