@@ -123,7 +123,7 @@ brew install --cask --force \
 	keka \
 	uninstallpkg \
 	choosy \
-	haraguroicha/brew/caffeine \
+	haraguroicha/brew/caffeine-app \
 #	dropbox \
 #	lens \
 #	macdown \
