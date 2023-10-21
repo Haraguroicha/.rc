@@ -137,3 +137,6 @@ if [ "${AppleM}" == "0" ]; then
 		oxwu \
 
 fi
+
+brew install --cask --force --no-quarantine \
+	via qmk-toolbox
