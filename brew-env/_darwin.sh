@@ -140,3 +140,7 @@ fi
 
 brew install --cask --force --no-quarantine \
 	via qmk-toolbox
+
+brew install ruby@3.0
+# install ipa tool
+$(brew --prefix ruby@3.0)/bin/gem install shenzhen
