@@ -17,61 +17,37 @@ fi
 brew install --cask macfuse
 
 brew install --force --overwrite \
-	zsh \
-	telnet \
 	nmap \
-	pyenv \
-	hugo \
 	tree \
 	autoconf automake \
-	node \
 	openssl \
 	ffmpeg \
 	mas \
-	teamookla/speedtest/speedtest \
-	aria2 \
 	imagemagick \
-	bash-git-prompt \
 	irssi \
 	bgpdump \
 	jpeg \
-	gnu-tar \
 	kubernetes-cli \
 	libtool \
-	watch \
 	webp \
 	brettferdosi/tap/rclone-cask \
-	nvm \
 	x264 x265 \
 	xvid \
-	readline \
 	libusb libusb-compat \
 	openjpeg \
 	screenresolution \
 	opus \
 	lzo \
 	vault \
-	exiftool \
 	ext4fuse \
 	flac \
 	gnupg \
 	gnupg2 \
 	pinentry-mac \
 	iproute2mac \
-	docker-compose \
+	podman podman-desktop \
 	helm \
 	html-xml-utils \
-	expect moreutils \
-	scc \
-	duf \
-	gping \
-	btop \
-	exa \
-	bat \
-	progress \
-	oven-sh/bun/bun \
-	hudochenkov/sshpass/sshpass \
-	rust \
 #	mobile-shell \
 #	govc \
 #	libyubikey ykpers pam_yubico pam-u2f \

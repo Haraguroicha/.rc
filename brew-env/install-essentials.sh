@@ -13,12 +13,19 @@ PWD=$( cd "$( dirname "$0" )" && pwd )
 brew analytics off
 
 # install for both of Darwin and Linux used packages
-brew install xz ansifilter most fzf sheldon fswatch \
+brew install xz ansifilter most fzf sheldon fswatch zsh telnet \
 	diff-so-fancy direnv upx podman mtr ncdu git jq yq go \
 	tmux htop ipcalc subnetcalc httping nano bash iperf3 \
-	coreutils grep ncurses dialog neofetch thefuck pv \
-	gcc hudochenkov/sshpass/sshpass \
-	gping
+	coreutils grep gawk ncurses dialog neofetch thefuck pv \
+	gcc hudochenkov/sshpass/sshpass node hugo pyenv gnu-tar \
+	gping watch oven-sh/bun/bun hudochenkov/sshpass/sshpass \
+	progress rust teamookla/speedtest/speedtest aria2 nvm \
+	readline exiftool docker-compose expect moreutils btop \
+	gping duf scc exa bat bash-git-prompt
+
+# Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
+mkdir -p ~/.docker/cli-plugins
+ln -sfn /opt/homebrew/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 
 case $OSTYPE in
 	Darwin)
