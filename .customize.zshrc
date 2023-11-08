@@ -126,7 +126,7 @@ eval "$(direnv hook zsh)"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$HOME/.HaraguroichaTools:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
-export JAVA_HOME=/usr/local/opt/openjdk@11
+#export JAVA_HOME=/usr/local/opt/openjdk@11
 export PATH="$JAVA_HOME:$PATH"
 export TNS_ADMIN="$HOME/.oracle/network/admin"
 export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
