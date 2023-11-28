@@ -5,6 +5,10 @@ gp () {
 		shift
 		gping $*
 	else
+		[[ ! -x "$(which ipconfig)" ]] && echo "install ipconfig first" && return 1
+		[[ ! -x "$(which netstat)" ]] && echo "install netstat first" && return 1
+		[[ ! -x "$(which traceroute)" ]] && echo "install traceroute first" && return 1
+		[[ ! -x "$(which dig)" ]] && echo "install dig first" && return 1
 		gping $(echo -e "$(ipconfig getoption '' router)
 $(netstat -nr | grep default | egrep -v '%|#' | awk '{print $2}')
 $(ipconfig getoption "" domain_name_server)
