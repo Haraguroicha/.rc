@@ -48,6 +48,7 @@ brew install --force --overwrite \
 	podman podman-desktop \
 	helm \
 	html-xml-utils \
+	telnet \
 #	mobile-shell \
 #	govc \
 #	libyubikey ykpers pam_yubico pam-u2f \
