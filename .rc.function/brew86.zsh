@@ -12,7 +12,7 @@ brew86 () {
 	arch_brew "$@"
 }
 
-export WINE=$(brew86 --prefix game-porting-toolkit)/bin/wine64
+[[ "${_UNAME}" == "Darwin" ]] && export WINE=$(brew86 --prefix game-porting-toolkit)/bin/wine64
 gpt () {
 	(
 		export WINEPREFIX=$HOME/.wine-win10
