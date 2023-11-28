@@ -132,6 +132,7 @@ export TNS_ADMIN="$HOME/.oracle/network/admin"
 export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
 export EDITOR=nano
 export MANPAGER='most -s'
+export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # watch .zplugs
 #async_start_worker watch_zplugs -n
