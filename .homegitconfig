@@ -16,10 +16,12 @@
 	template = ~/.stCommitMsg
 	gpgsign = true
 [gpg]
-	#program = gpg2
 	format = ssh
+[gpg "openpgp"]
+	program = gpg2
 [gpg "ssh"]
-	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+#	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+	program = "/opt/ssh-sign-extract"
 	allowedSignersFile = ~/.ssh/allowed_signers
 [alias]
 	dtv = "!f() { echo \"$(git describe --tags --long --dirty --always)\"; }; f"

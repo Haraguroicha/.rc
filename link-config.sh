@@ -15,6 +15,7 @@ lnsf .bashrc-env .bashrc-env
 lnsf .homegitconfig .gitconfig
 lnsf .homeenvrc .envrc
 lnsf .allowed_signers .ssh/allowed_signers
+sudo ln -sf "${DIR}/.rc.function/ssh-sign-extract.zsh" "/opt/ssh-sign-extract"
 
 cd "${DIR}"
 sudo chown -vR 0:0 ./sudoers.d/*
