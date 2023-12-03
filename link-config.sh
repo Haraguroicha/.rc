@@ -14,6 +14,7 @@ lnsf .tmux.conf .tmux.conf
 lnsf .bashrc-env .bashrc-env
 lnsf .homegitconfig .gitconfig
 lnsf .homeenvrc .envrc
+lnsf .allowed_signers .ssh/allowed_signers
 
 cd "${DIR}"
 sudo chown -vR 0:0 ./sudoers.d/*

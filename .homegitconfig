@@ -1,6 +1,7 @@
 [user]
 	name = 腹黒い茶
-	signingkey = A4D44FC540963E24
+	#signingkey = A4D44FC540963E24
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGpFn7A2xVgwonAj1Wg0nxdYr0u5KpoBN8E2PakVq9/D
 [core]
 	excludesfile = \"$HOME\"/.gitignore_global
 	precomposeunicode = true
@@ -12,10 +13,14 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = \"$HOME\"/.stCommitMsg
+	template = ~/.stCommitMsg
 	gpgsign = true
 [gpg]
-	program = gpg2
+	#program = gpg2
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+	allowedSignersFile = ~/.ssh/allowed_signers
 [alias]
 	dtv = "!f() { echo \"$(git describe --tags --long --dirty --always)\"; }; f"
 	dif = "!f() { git diff | diff-so-fancy; }; f"
