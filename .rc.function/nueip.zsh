@@ -1,12 +1,22 @@
 #!/usr/bin/env zsh
 
 nueip () {
+  CHROME_MAJOR_VERSION=119
+  case "$(uname)" in
+    Darwin)
+      CHROME_MAJOR_VERSION=$(/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version | awk '{print $NF}' | awk -F. '{print $1}')
+      UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${CHROME_MAJOR_VERSION}.0.0.0 Safari/537.36"
+    ;;
+    Linux)
+      UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+    ;;
+  esac
+
+  [[ -n "$DEBUG" ]] && env
   [[ -z "$1" ]] && echo "Try input in/1/out/2" && return 1
   env_ok=0
   [[ -n "${NUEIP_COMPANY}" ]] && [[ -n "${NUEIP_ID}" ]] && [[ -n "${NUEIP_PASS}" ]] && [[ -n "${NUEIP_LAT}" ]] && [[ -n "${NUEIP_LNG}" ]] && env_ok=1
   [[ "${env_ok}" == "0" ]] && echo "required env var not met" && return 127
-
-  UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
 
   cookies=$(curl -sv 'https://cloud.nueip.com/login/index/param' \
     -H "user-agent: ${UA}" \
