@@ -113,3 +113,8 @@ nueip () {
     ;;
   esac
 }
+
+random-coordinate () {
+	cd ~/gitRepos/TipsyCoffee/haraguroicha/random-coordinate
+	eval "$(cargo r -- "$@")"
+}
