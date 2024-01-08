@@ -49,7 +49,8 @@ setopt menu_complete
 
 # Require root permission command
 [[ "${_UNAME}" == "Darwin" ]] && alias htop='sudo htop'
-alias mtr='sudo mtr'
+#alias mtr='sudo mtr'
+alias mtr='sudo trip --dns-resolve-method resolv --dns-lookup-as-info --tui-address-mode both --tui-icmp-extension-mode all'
 
 # Open multi files with vim tab
 alias vim='vim -p'

@@ -21,7 +21,7 @@ brew install xz ansifilter most fzf sheldon fswatch zsh gping \
 	watch oven-sh/bun/bun hudochenkov/sshpass/sshpass bat \
 	progress rust teamookla/speedtest/speedtest aria2 nvm \
 	readline exiftool docker-compose expect moreutils btop \
-	duf scc exa bash-git-prompt
+	duf scc exa bash-git-prompt trippy
 
 # Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
 mkdir -p ~/.docker/cli-plugins

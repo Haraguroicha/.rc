@@ -1,2 +1,4 @@
 %staff	ALL=NOPASSWD:	/usr/local/sbin/mtr
 %staff	ALL=NOPASSWD:	/opt/homebrew/sbin/mtr
+%staff	ALL=NOPASSWD:	/usr/local/bin/trip
+%staff	ALL=NOPASSWD:	/opt/homebrew/bin/trip
