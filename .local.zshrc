@@ -50,7 +50,7 @@ setopt menu_complete
 # Require root permission command
 [[ "${_UNAME}" == "Darwin" ]] && alias htop='sudo htop'
 #alias mtr='sudo mtr'
-alias mtr='sudo trip --dns-resolve-method resolv --dns-lookup-as-info --dns-resolve-all --tui-address-mode both --icmp-extensions --tui-icmp-extension-mode all'
+#alias mtr='sudo trip --dns-resolve-method resolv --dns-lookup-as-info --dns-resolve-all --tui-address-mode both --icmp-extensions --tui-icmp-extension-mode all'
 
 # Open multi files with vim tab
 alias vim='vim -p'
@@ -73,6 +73,7 @@ alias p6=newPing6
 
 # Alias of mtr
 alias m=newMtr
+alias mtr=m
 
 # Alias of nslookup
 alias n='nslookup'
@@ -98,11 +99,28 @@ function newPing6(){
 
 # lazy mtr
 function newMtr(){
-    if [ -z "$1" ]; then
-        mtr 8.8.8.8
-    else
-        mtr $*
-    fi
+    _m="sudo trip"
+    _m_args=(
+        "--dns-resolve-method" "resolv"
+        "--dns-lookup-as-info"
+        "--tui-address-mode" "both"
+        "--icmp-extensions"
+        "--tui-icmp-extension-mode" "all"
+    )
+    _use_icmp=1
+    [[ -z "$1" ]] && _m_args+=("8.8.8.8")
+    while [ -n "$1" ]; do
+        _next="$1"
+        case "$_next" in
+            --udp|--tcp)
+              _use_icmp=0
+              ;;
+        esac
+        _m_args+=("$_next")
+        shift
+    done
+    [[ "$_use_icmp" == "1" ]] && _m_args+=("--dns-resolve-all")
+    eval "${_m}" "${_m_args[@]}" "$@"
 }
 
 bindkey '^b' backward-word
