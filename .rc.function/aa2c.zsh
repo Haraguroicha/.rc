@@ -16,8 +16,7 @@ aa2c () {
 		shift
 		case $arg in
 			--)
-			shift
-			urls=( $@ )
+			urls=( "$@" )
 			echo -n "$urls[@]"
 			break
 			;;
