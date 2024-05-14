@@ -134,6 +134,10 @@ export EDITOR=nano
 export MANPAGER='most -s'
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
+if [[ -x "$(which rbenv)" ]]; then
+	eval "$(rbenv init - zsh)"
+fi
+
 # watch .zplugs
 #async_start_worker watch_zplugs -n
 #_zplugs_callback () {
