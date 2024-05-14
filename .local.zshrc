@@ -5,7 +5,6 @@ HISTFILE=~/.zsh_history
 
 export PAGER="most"
 setopt prompt_subst
-#export TERM="screen-256color"
 export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -49,8 +48,6 @@ setopt menu_complete
 
 # Require root permission command
 [[ "${_UNAME}" == "Darwin" ]] && alias htop='sudo htop'
-#alias mtr='sudo mtr'
-#alias mtr='sudo trip --dns-resolve-method resolv --dns-lookup-as-info --dns-resolve-all --tui-address-mode both --icmp-extensions --tui-icmp-extension-mode all'
 
 # Open multi files with vim tab
 alias vim='vim -p'
@@ -145,44 +142,19 @@ __cd_undo() { builtin popd;     echo; __call_precmds; zle reset-prompt }
 zle -N __cd_up;   bindkey '^[[1;2A' __cd_up
 zle -N __cd_undo; bindkey '^[[1;2B' __cd_undo
 
-#alias g='go run .'
-
 # command line snow effect
 function snow(){
     clear;
     while :;do echo $LINES $COLUMNS $(($RANDOM%$COLUMNS)) $(printf "\u2744\n");sleep 0.1;done|awk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x;printf "\033[%s;%sH%s \033[0;0H",a[x],x,$4;}}'
 }
 
-# Custom command prompt %h for host name
-#h=$(hostname -s)
-#PROMPT='[%F{green}%n%f@%F{cyan}$h%f %F{yellow}%D{%Y-%m-%d}%f %F{red}%D{%H:%M:%S}%f %F{magenta}%~%f]%F{yellow}%#%f '
-
-#if [ -d /etc/profile.d ]; then
-#  for i in /etc/profile.d/*.sh; do
-#    if [ -r $i ]; then
-#      #source $i
-#    fi
-#  done
-#  unset i
-#fi
+[ -f /etc/zsh/zshrc ] && source /etc/zsh/zshrc
 
 # Command search path
-export PATH=$PATH:/bin
-export PATH=$PATH:/sbin
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/local/sbin
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-#export PATH=$PATH:~/.composer/vendor/bin
-#export PATH=$PATH:/opt/letsencrypt
-#export PATH=~/.pyenv/bin:$PATH
-#if [ "`type pyenv >/dev/null; echo $?`" = "0" ]; then
-#	eval "$(pyenv init - 2>/dev/null)"
-#	eval "$(pyenv virtualenv-init - 2>/dev/null)"
-#fi
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 #source /opt/asn
 
-[ -f /etc/zsh/zshrc ] && source /etc/zsh/zshrc
+#[[ -d "$HOME/.cargo/bin" ]] && export PATH=$HOME/.cargo/bin:$PATH
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 source "$(dirname $(readlink ~/.zshrc))/.customize.zshrc"
