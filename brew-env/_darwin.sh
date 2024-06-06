@@ -62,10 +62,10 @@ brew install --force --overwrite \
 #	heroku heroku-node \
 
 brew install --cask --force \
-	homebrew/cask-fonts/font-hack-nerd-font \
-	homebrew/cask-fonts/font-jf-open-huninn \
-	homebrew/cask-fonts/font-meslo-for-powerline \
-	homebrew/cask-fonts/font-meslo-lg-nerd-font \
+	font-hack-nerd-font \
+	font-jf-open-huninn \
+	font-meslo-for-powerline \
+	font-meslo-lg-nerd-font \
 	1password 1password-cli \
 	google-chrome homebrew/cask-versions/google-chrome-beta \
 	firefox \
