@@ -72,7 +72,7 @@ brew install --cask --force \
 	visual-studio-code \
 	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
 	alfred \
-	bartender \
+	jordanbaird-ice \
 	iterm2 \
 	coconutbattery \
 	shimo \
