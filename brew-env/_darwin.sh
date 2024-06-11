@@ -75,9 +75,7 @@ brew install --cask --force \
 	jordanbaird-ice \
 	iterm2 \
 	coconutbattery \
-	shimo \
 	istat-menus \
-	onyx \
 	wireshark \
 	gpg-suite-no-mail \
 	mattermost \
@@ -101,6 +99,8 @@ brew install --cask --force \
 	uninstallpkg \
 	choosy \
 	haraguroicha/brew/caffeine-app \
+#	shimo \
+#	onyx \
 #	dropbox \
 #	lens \
 #	macdown \
