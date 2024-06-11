@@ -66,6 +66,7 @@ brew install --cask --force \
 	font-jf-open-huninn \
 	font-meslo-for-powerline \
 	font-meslo-lg-nerd-font \
+	aerial \
 	1password 1password-cli \
 	google-chrome homebrew/cask-versions/google-chrome-beta \
 	firefox \
