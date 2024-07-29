@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 winbox () {
+	export WINEBOOTSTRAPMODE=1
 	export LC_CTYPE=en_US.UTF-8
 	export WINEDLLOVERRIDES=mscoree,mshtml=
 	export WINEDEBUG=fixme-esync
