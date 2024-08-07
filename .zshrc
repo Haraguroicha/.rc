@@ -139,6 +139,9 @@ if [[ "${_UNAME}" == "Linux" ]]; then
         export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/glibc/include"
         _SET_RC=1
       fi
+    else
+      eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+      _SET_RC=1
     fi
   else
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

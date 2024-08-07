@@ -11,24 +11,29 @@ export SHELDON_CONFIG_DIR=$SHELDON_DIR
 export SHELDON_DATA_DIR=$SHELDON_DIR
 eval "$(sheldon source)"
 
-_neofetch_tmp=${TMPDIR}/_tmp_neofetch_sid_${_sid}.txt
-_neofetch () {
-	if [ -f "$_neofetch_tmp" ]; then
-		cat "$_neofetch_tmp"
-	else
-		nf="$(cat <<NFS
-$(neofetch)
-Generated at $(date '+%Y-%m-%d %H:%M:%S'), force update use clean screen by press \e[47m\e[30m ^L \e[0m
- 
- 
-NFS
-)"
-		echo "$nf" | tee "$_neofetch_tmp"
-	fi
+#_neofetch_tmp=${TMPDIR}/_tmp_neofetch_sid_${_sid}.txt
+#_neofetch () {
+#	if [ -f "$_neofetch_tmp" ]; then
+#		cat "$_neofetch_tmp"
+#	else
+#		nf="$(cat <<NFS
+#$(neofetch)
+#Generated at $(date '+%Y-%m-%d %H:%M:%S'), force update use clean screen by press \e[47m\e[30m ^L \e[0m
+# 
+# 
+#NFS
+#)"
+#		echo "$nf" | tee "$_neofetch_tmp"
+#	fi
+#}
+#clear-screen() { echoti clear; rm "$_neofetch_tmp"; _neofetch; zle redisplay; }
+_fastfetch() {
+	echo "$(fastfetch -c "$(dirname $(readlink ~/.zshrc))/.fastfetch.jsonc" 2>/dev/null)"
 }
-clear-screen() { echoti clear; rm "$_neofetch_tmp"; _neofetch; zle redisplay; }
+clear-screen() { echoti clear; _fastfetch; zle redisplay; }
 zle -N clear-screen
-_neofetch
+#_neofetch
+_fastfetch
 
 # enable fzf binding
 [ -f "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh" ] && [ -f "${MY_RC_PATH}/.fzf.zsh" ] && source "${MY_RC_PATH}/.fzf.zsh"

@@ -16,7 +16,7 @@ brew analytics off
 brew install xz ansifilter most fzf sheldon fswatch zsh gping \
 	diff-so-fancy direnv upx podman mtr ncdu git jq yq go \
 	tmux htop ipcalc subnetcalc httping nano bash iperf3 \
-	coreutils grep gawk ncurses dialog neofetch thefuck pv \
+	coreutils grep gawk ncurses dialog fastfetch thefuck pv \
 	gcc hudochenkov/sshpass/sshpass node hugo pyenv gnu-tar \
 	watch oven-sh/bun/bun hudochenkov/sshpass/sshpass bat \
 	progress rust teamookla/speedtest/speedtest aria2 nvm \
