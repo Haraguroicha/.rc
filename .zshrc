@@ -113,11 +113,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-function check_iterm2_shell_integration() {
-	[ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
-	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-}
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
+export _SET_RC=0
 export _UNAME="$(uname)"
 if [[ "${_UNAME}" != "Linux" ]]; then
 	[ -n "$(uname -mp | grep arm)" ] && export AppleM=1 || AppleM=0
@@ -127,14 +126,38 @@ if [[ "${_UNAME}" != "Linux" ]]; then
 		export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 	fi
 	eval "$(brew shellenv)"
+	_SET_RC=1
 fi
-[[ "${_UNAME}" == "Linux" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-[ "${LC_TERMINAL}" = "iTerm2" ] && check_iterm2_shell_integration
-[ "${TERM_PROGRAM}" = "iTerm.app" ] && check_iterm2_shell_integration
-source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
+if [[ "${_UNAME}" == "Linux" ]]; then
+  LSB_RELEASE=$(which lsb_release)
+  if [[ -n "${LSB_RELEASE}" ]]; then
+    if [[ "$(${LSB_RELEASE} -i | grep SteamOS | awk -F: '{print $NF}' | xargs)" == "SteamOS" ]]; then
+      if [ $(basename $(printf "%s" "$(ps -p $(ps -p $$ -o ppid=) -o cmd=)" | cut --delimiter " " --fields 1)) = konsole ] || [[ -n "${SSH_CONNECTION}" ]] ; then
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        export PATH="/opt/bin:$PATH"
+        export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/glibc/lib"
+        export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/glibc/include"
+        _SET_RC=1
+      fi
+    fi
+  else
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    _SET_RC=1
+  fi
+fi
 unset AppleM
 unset _UNAME
+
+function check_iterm2_shell_integration() {
+	[ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+}
+[ "${LC_TERMINAL}" = "iTerm2" ] && check_iterm2_shell_integration
+[ "${TERM_PROGRAM}" = "iTerm.app" ] && check_iterm2_shell_integration
 unset check_iterm2_shell_integration
+
+[[ "${_SET_RC}" == "1" ]] && source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
+unset _SET_RC
 
 # Enable by uncomment following line to print the trace init load performance output
 #zprof
