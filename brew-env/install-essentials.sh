@@ -14,14 +14,13 @@ brew analytics off
 
 # install for both of Darwin and Linux used packages
 brew install xz ansifilter most fzf sheldon fswatch zsh gping \
-	diff-so-fancy direnv podman mtr ncdu git jq yq go tmux \
+	diff-so-fancy direnv mtr ncdu git jq yq go hugo tmux \
 	btop htop ipcalc subnetcalc httping nano bash iperf3 \
-	coreutils grep gawk ncurses dialog fastfetch thefuck pv \
-	gcc hudochenkov/sshpass/sshpass node hugo pyenv gnu-tar \
-	watch oven-sh/bun/bun hudochenkov/sshpass/sshpass bat \
-	progress rustup teamookla/speedtest/speedtest aria2 nvm \
-	readline exiftool docker-compose expect moreutils trippy \
-	duf scc eza bash-git-prompt
+	gcc coreutils grep gawk ncurses dialog fastfetch pv \
+	node pyenv gnu-tar oven-sh/bun/bun podman docker-compose \
+	topcheer/sshpass/sshpass teamookla/speedtest/speedtest \
+	watch progress rustup aria2 nvm thefuck bash-git-prompt \
+	readline exiftool expect moreutils trippy bat duf scc eza \
 
 # Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
 mkdir -p ~/.docker/cli-plugins
