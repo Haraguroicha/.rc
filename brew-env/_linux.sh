@@ -1,7 +1,7 @@
 #!/bin/bash
 set -Eeou pipefail
 
-sudo apt install -y --auto-remove build-essential procps curl file git zsh
+[[ -x "$(which apt)" ]] && sudo apt install -y --auto-remove build-essential procps curl file git zsh
 
 brew install \
 	homebrew/fonts/font-hack-nerd-font \
