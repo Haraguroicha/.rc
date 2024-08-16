@@ -16,11 +16,12 @@ brew analytics off
 brew install xz ansifilter most fzf sheldon fswatch zsh gping \
 	diff-so-fancy direnv mtr ncdu git jq yq go hugo tmux \
 	btop htop ipcalc subnetcalc httping nano bash iperf3 \
-	gcc coreutils grep gawk ncurses dialog fastfetch pv \
+	gcc gcc@11 gcc@12 llvm coreutils grep gawk moreutils \
+	watch expect thefuck progress pv readline ncurses bat \
 	node pyenv gnu-tar oven-sh/bun/bun podman docker-compose \
 	topcheer/sshpass/sshpass teamookla/speedtest/speedtest \
-	watch progress rustup aria2 nvm thefuck bash-git-prompt \
-	readline exiftool expect moreutils trippy bat duf scc eza \
+	rustup aria2 nvm bash-git-prompt exiftool duf scc eza \
+	dialog fastfetch trippy \
 
 # Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
 mkdir -p ~/.docker/cli-plugins

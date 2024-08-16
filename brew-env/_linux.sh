@@ -4,10 +4,10 @@ set -Eeou pipefail
 [[ -x "$(which apt)" ]] && sudo apt install -y --auto-remove build-essential procps curl file git zsh
 
 brew install \
-	homebrew/fonts/font-hack-nerd-font \
-	homebrew/fonts/font-jf-open-huninn \
-	homebrew/fonts/font-meslo-for-powerline \
-	homebrew/fonts/font-meslo-lg-nerd-font \
+	homebrew/linux-fonts/font-hack-nerd-font \
+	homebrew/linux-fonts/font-jf-open-huninn \
+	homebrew/linux-fonts/font-meslo-for-powerline \
+	homebrew/linux-fonts/font-meslo-lg-nerd-font \
 	util-linux \
 	hugo \
 	goenv \
