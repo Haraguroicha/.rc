@@ -50,7 +50,6 @@ brew install \
 	fontforge \
 	bzip2 \
 	automake autoconf \
-	rust \
 #	irssi \
 #	vault \
 #	openjdk \

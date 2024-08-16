@@ -19,7 +19,7 @@ brew install xz ansifilter most fzf sheldon fswatch zsh gping \
 	coreutils grep gawk ncurses dialog fastfetch thefuck pv \
 	gcc hudochenkov/sshpass/sshpass node hugo pyenv gnu-tar \
 	watch oven-sh/bun/bun hudochenkov/sshpass/sshpass bat \
-	progress rust teamookla/speedtest/speedtest aria2 nvm \
+	progress rustup teamookla/speedtest/speedtest aria2 nvm \
 	readline exiftool docker-compose expect moreutils btop \
 	duf scc eza bash-git-prompt trippy
 
