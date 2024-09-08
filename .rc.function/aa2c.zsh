@@ -4,7 +4,7 @@ _get_urls () {
 }
 
 __aa () {
-	aria2c -j64 -s16 -x16 --file-allocation=none --remote-time --disable-ipv6 --continue --summary-interval=5 "$@"
+	aria2c -j64 -s16 -x16 --file-allocation=none --remote-time --continue --summary-interval=5 "$@"
 }
 
 aa2c () {
