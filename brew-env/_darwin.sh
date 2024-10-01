@@ -68,7 +68,7 @@ brew install --cask --force \
 	font-meslo-lg-nerd-font \
 	aerial \
 	1password 1password-cli \
-	google-chrome homebrew/cask-versions/google-chrome-beta \
+	google-chrome google-chrome@beta \
 	firefox \
 	visual-studio-code \
 	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
@@ -91,7 +91,6 @@ brew install --cask --force \
 	nrlquaker-winbox \
 	android-platform-tools \
 	canon-eos-utility \
-	canon-eos-webcam-utility \
 	WebPQuickLook \
 	qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency qlvideo \
 	sony-ps-remote-play \

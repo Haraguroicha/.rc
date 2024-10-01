@@ -21,7 +21,7 @@ brew install xz ansifilter most fzf sheldon fswatch zsh gping \
 	node pyenv gnu-tar oven-sh/bun/bun podman docker-compose \
 	topcheer/sshpass/sshpass teamookla/speedtest/speedtest \
 	rustup aria2 nvm bash-git-prompt exiftool duf scc eza \
-	dialog fastfetch trippy \
+	dialog fastfetch trippy bx \
 
 # Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
 mkdir -p ~/.docker/cli-plugins
