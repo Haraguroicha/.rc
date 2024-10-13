@@ -8,27 +8,19 @@ brew install \
 	homebrew/linux-fonts/font-jf-open-huninn \
 	homebrew/linux-fonts/font-meslo-for-powerline \
 	homebrew/linux-fonts/font-meslo-lg-nerd-font \
+	rclone \
 	util-linux \
-	hugo \
-	goenv \
 	opus \
 	zlib \
 	webp \
-	x264 \
-	x265 \
+	x264 x265 \
 	xinput \
 	xvid \
-	yarn \
-	speedtest-cli \
 	patchelf \
 	pkg-config \
-	pyenv \
-	rclone \
 	readline \
 	openssl \
 	openjpeg \
-	nvm \
-	node \
 	lzo \
 	libusb \
 	libx11 \
@@ -45,11 +37,9 @@ brew install \
 	itstool \
 	gnutls \
 	gettext \
-	ffmpeg \
 	flac \
 	fontforge \
 	bzip2 \
-	automake autoconf \
 #	irssi \
 #	vault \
 #	openjdk \

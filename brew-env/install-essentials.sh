@@ -13,15 +13,15 @@ PWD=$( cd "$( dirname "$0" )" && pwd )
 brew analytics off
 
 # install for both of Darwin and Linux used packages
-brew install xz ansifilter most fzf sheldon fswatch zsh gping \
-	diff-so-fancy direnv mtr ncdu git jq yq go hugo tmux \
-	btop htop ipcalc subnetcalc httping nano bash iperf3 \
-	gcc gcc@11 gcc@12 llvm coreutils grep gawk moreutils \
-	watch expect thefuck progress pv readline ncurses bat \
-	node pyenv gnu-tar oven-sh/bun/bun podman docker-compose \
-	topcheer/sshpass/sshpass teamookla/speedtest/speedtest \
-	rustup aria2 nvm bash-git-prompt exiftool duf scc eza \
-	dialog fastfetch trippy bx \
+brew install xz ansifilter most fzf sheldon fswatch zsh bash gping \
+	diff-so-fancy direnv mtr ncdu git jq yq go hugo goenv bat \
+	tmux btop htop ipcalc subnetcalc httping nano iperf3 llvm \
+	gcc gcc@11 gcc@12 coreutils grep gawk moreutils thefuck pv \
+	watch expect progress readline ncurses node pyenv gnu-tar \
+	oven-sh/bun/bun podman docker-compose rustup aria2 scc eza \
+	topcheer/sshpass/sshpass teamookla/speedtest/speedtest bx \
+	nvm bash-git-prompt exiftool duf dialog fastfetch trippy \
+	pyenv ffmpeg nmap tree autoconf automake \
 
 # Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
 mkdir -p ~/.docker/cli-plugins

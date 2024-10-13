@@ -17,11 +17,7 @@ fi
 brew install --cask macfuse
 
 brew install --force --overwrite \
-	nmap \
-	tree \
-	autoconf automake \
 	openssl \
-	ffmpeg \
 	mas \
 	imagemagick \
 	irssi \
@@ -75,19 +71,17 @@ brew install --cask --force \
 	alfred \
 	jordanbaird-ice \
 	iterm2 \
-	coconutbattery \
 	istat-menus \
 	wireshark \
 	gpg-suite-no-mail \
 	mattermost \
 	discord \
-	macpass \
 	iina \
 	google-drive \
 	parallels \
 	adobe-creative-cloud \
 	telegram telegram-desktop \
-	gcenx/wine/wineskin \
+	gcenx/wine/kegworks \
 	nrlquaker-winbox \
 	android-platform-tools \
 	canon-eos-utility \
@@ -99,6 +93,8 @@ brew install --cask --force \
 	uninstallpkg \
 	choosy \
 	haraguroicha/brew/caffeine-app \
+#	coconutbattery \
+#	macpass \
 #	shimo \
 #	onyx \
 #	dropbox \
