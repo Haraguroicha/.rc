@@ -30,7 +30,7 @@ eval "$(sheldon source)"
 _fastfetch() {
 	echo "$(fastfetch -c "$(dirname $(readlink ~/.zshrc))/.fastfetch.jsonc" 2>/dev/null)"
 }
-clear-screen() { echoti clear; _fastfetch; zle redisplay; }
+clear-screen() { echoti clear; reset; _fastfetch; zle redisplay; }
 zle -N clear-screen
 #_neofetch
 _fastfetch
