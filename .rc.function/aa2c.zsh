@@ -4,7 +4,15 @@ _get_urls () {
 }
 
 __aa () {
-	aria2c -j64 -s16 -x16 --file-allocation=none --remote-time --continue --summary-interval=5 "$@"
+	aria2c -j64 -s16 -x16 \
+		--file-allocation=none \
+		--remote-time --continue \
+		--summary-interval=5 \
+		--auto-file-renaming=false \
+		--content-disposition-default-utf8 \
+		--force-save --save-not-found --save-session="$PWD/.aa2c.tmp" --save-session-interval=1 \
+		--allow-overwrite=true \
+		"$@"
 }
 
 aa2c () {
