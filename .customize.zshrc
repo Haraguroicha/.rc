@@ -27,8 +27,20 @@ eval "$(sheldon source)"
 #	fi
 #}
 #clear-screen() { echoti clear; rm "$_neofetch_tmp"; _neofetch; zle redisplay; }
+[[ -z "$_fastfetch_tmp" ]] && _fastfetch_tmp=${TMPDIR}/_tmp_fastfetch_sid_${_sid}.txt
 _fastfetch() {
-	echo "$(fastfetch -c "$(dirname $(readlink ~/.zshrc))/.fastfetch.jsonc" 2>/dev/null)"
+	if [ -f "$_fastfetch_tmp" ]; then
+		cat "$_fastfetch_tmp"
+	else
+		ff="$(cat <<NFS
+$(fastfetch -c "$(dirname $(readlink ~/.zshrc))/.fastfetch.jsonc" 2>/dev/null)
+Generated at $(date '+%Y-%m-%d %H:%M:%S'), force update use clean screen by press \e[47m\e[30m ^L \e[0m
+ 
+ 
+NFS
+)"
+		echo "$ff" | tee "$_fastfetch_tmp"
+	fi
 }
 clear-screen() { echoti clear; reset; _fastfetch; zle redisplay; }
 zle -N clear-screen
