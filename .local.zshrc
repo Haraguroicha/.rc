@@ -103,6 +103,7 @@ function newMtr(){
         "--tui-address-mode" "both"
         "--icmp-extensions"
         "--tui-icmp-extension-mode" "all"
+        "--addr-family" "ipv6-then-ipv4"
     )
     _use_icmp=1
     [[ -z "$1" ]] && _m_args+=("8.8.8.8")
@@ -151,7 +152,7 @@ function snow(){
 [ -f /etc/zsh/zshrc ] && source /etc/zsh/zshrc
 
 # Command search path
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+export PATH="$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 #source /opt/asn
 
 #[[ -d "$HOME/.cargo/bin" ]] && export PATH=$HOME/.cargo/bin:$PATH

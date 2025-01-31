@@ -36,7 +36,7 @@ zle -N clear-screen
 _fastfetch
 
 # enable fzf binding
-[ -f "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh" ] && [ -f "${MY_RC_PATH}/.fzf.zsh" ] && source "${MY_RC_PATH}/.fzf.zsh"
+[ -f "$(brew --prefix fzf)/shell/key-bindings.zsh" ] && [ -f "${MY_RC_PATH}/.fzf.zsh" ] && source "${MY_RC_PATH}/.fzf.zsh"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 # For Plugins default configurations
@@ -85,9 +85,9 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(direnv hook zsh)"
-export PATH="$HOME/.HaraguroichaTools:/usr/local/opt/curl/bin:$HOME/go/bin:$JAVA_HOME:$PATH"
+export PATH="$HOME/.HaraguroichaTools:$(brew --prefix curl)/bin:$(brew --prefix grep)/libexec/gnubin:$HOME/go/bin:$JAVA_HOME:$PATH"
 export TNS_ADMIN="$HOME/.oracle/network/admin"
-export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+export DOTNET_ROOT="$(brew --prefix dotnet)/libexec"
 export EDITOR=nano
 export MANPAGER='most -s'
 export HOMEBREW_NO_INSTALL_CLEANUP=1
