@@ -100,12 +100,13 @@ eval "$(direnv hook zsh)"
 export PATH="$HOME/.HaraguroichaTools:$(brew --prefix curl)/bin:$(brew --prefix grep)/libexec/gnubin:$HOME/go/bin:$JAVA_HOME:$PATH"
 export TNS_ADMIN="$HOME/.oracle/network/admin"
 export DOTNET_ROOT="$(brew --prefix dotnet)/libexec"
-export EDITOR=nano
-export MANPAGER='most -s'
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 if [[ -x "$(which rbenv)" ]]; then
 	eval "$(rbenv init - zsh)"
 fi
+
+cheat_menu_compdef="$HOME/.HaraguroichaTools/cheat-menu.compdef.zsh"
+[[ -f "${cheat_menu_compdef}" ]] && source "${cheat_menu_compdef}"
 
 unset MY_RC_PATH

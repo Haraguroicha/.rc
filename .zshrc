@@ -11,58 +11,6 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
 
-export _SET_RC=0
-export _UNAME="$(uname)"
-if [[ "${_UNAME}" != "Linux" ]]; then
-	[ -n "$(uname -mp | grep arm)" ] && export AppleM=1 || AppleM=0
-	if [[ "${AppleM}" == "1" ]]; then
-		export BREW_PATH=/opt/homebrew
-	else
-		export BREW_PATH=/usr/local
-	fi
-	for b in bin sbin; do
-		export PATH=${BREW_PATH}/${b}:${PATH}
-	done
-	eval "$(brew shellenv)"
-	_SET_RC=1
-fi
-if [[ "${_UNAME}" == "Linux" ]]; then
-  LSB_RELEASE=$(which lsb_release)
-  if [[ -n "${LSB_RELEASE}" ]]; then
-    if [[ "$(${LSB_RELEASE} -i | grep SteamOS | awk -F: '{print $NF}' | xargs)" == "SteamOS" ]]; then
-      if [ $(basename $(printf "%s" "$(ps -p $(ps -p $$ -o ppid=) -o cmd=)" | cut --delimiter " " --fields 1)) = konsole ] || [[ -n "${SSH_CONNECTION}" ]] ; then
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        export PATH="/opt/bin:$PATH"
-        export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/glibc/lib"
-        export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/glibc/include"
-        _SET_RC=1
-      fi
-    else
-      eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-      _SET_RC=1
-    fi
-  else
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    _SET_RC=1
-  fi
-fi
-unset AppleM
-unset _UNAME
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-function check_iterm2_shell_integration() {
-	[ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
-	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-}
-[ "${LC_TERMINAL}" = "iTerm2" ] && check_iterm2_shell_integration
-[ "${TERM_PROGRAM}" = "iTerm.app" ] && check_iterm2_shell_integration
-unset check_iterm2_shell_integration
-
-[[ "${_SET_RC}" == "1" ]] && source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
-unset _SET_RC
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -164,6 +112,58 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export _SET_RC=0
+export _UNAME="$(uname)"
+if [[ "${_UNAME}" != "Linux" ]]; then
+	[ -n "$(uname -mp | grep arm)" ] && export AppleM=1 || AppleM=0
+	if [[ "${AppleM}" == "1" ]]; then
+		export BREW_PATH=/opt/homebrew
+	else
+		export BREW_PATH=/usr/local
+	fi
+	for b in bin sbin; do
+		export PATH=${BREW_PATH}/${b}:${PATH}
+	done
+	eval "$(brew shellenv)"
+	_SET_RC=1
+fi
+if [[ "${_UNAME}" == "Linux" ]]; then
+  LSB_RELEASE=$(which lsb_release)
+  if [[ -n "${LSB_RELEASE}" ]]; then
+    if [[ "$(${LSB_RELEASE} -i | grep SteamOS | awk -F: '{print $NF}' | xargs)" == "SteamOS" ]]; then
+      if [ $(basename $(printf "%s" "$(ps -p $(ps -p $$ -o ppid=) -o cmd=)" | cut --delimiter " " --fields 1)) = konsole ] || [[ -n "${SSH_CONNECTION}" ]] ; then
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        export PATH="/opt/bin:$PATH"
+        export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/glibc/lib"
+        export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/glibc/include"
+        _SET_RC=1
+      fi
+    else
+      eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+      _SET_RC=1
+    fi
+  else
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    _SET_RC=1
+  fi
+fi
+unset AppleM
+unset _UNAME
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+function check_iterm2_shell_integration() {
+	[ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+}
+[ "${LC_TERMINAL}" = "iTerm2" ] && check_iterm2_shell_integration
+[ "${TERM_PROGRAM}" = "iTerm.app" ] && check_iterm2_shell_integration
+unset check_iterm2_shell_integration
+
+[[ "${_SET_RC}" == "1" ]] && source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
+unset _SET_RC
 
 # Enable by uncomment following line to print the trace init load performance output
 #zprof

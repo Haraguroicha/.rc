@@ -3,17 +3,19 @@ SAVEHIST=1000
 HISTFILESIZE=1000
 HISTFILE=~/.zsh_history
 
+# Command search path
+export PATH="$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+
+export EDITOR=nano
 export PAGER="most"
-setopt prompt_subst
+export MANPAGER="most -s"
 export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-cheat_menu_compdef="$HOME/.HaraguroichaTools/cheat-menu.compdef.zsh"
-[[ -f "${cheat_menu_compdef}" ]] && source "${cheat_menu_compdef}"
-
 autoload -Uz promptinit
 promptinit
+setopt prompt_subst
 setopt histignorealldups sharehistory
 setopt APPEND_HISTORY # Don't erase history
 setopt EXTENDED_HISTORY # Add additional data to history like timestamp
@@ -151,8 +153,6 @@ function snow(){
 
 [ -f /etc/zsh/zshrc ] && source /etc/zsh/zshrc
 
-# Command search path
-export PATH="$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 #source /opt/asn
 
 #[[ -d "$HOME/.cargo/bin" ]] && export PATH=$HOME/.cargo/bin:$PATH
