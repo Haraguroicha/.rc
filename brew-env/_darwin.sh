@@ -93,6 +93,8 @@ brew install --cask --force \
 	uninstallpkg \
 	choosy \
 	haraguroicha/brew/caffeine-app \
+	tg-pro \
+	virtualbuddy@beta \
 #	coconutbattery \
 #	macpass \
 #	shimo \
