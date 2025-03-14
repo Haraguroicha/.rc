@@ -2,7 +2,7 @@
 
 gitgc () {
 	(
-		cd "$(git rev-parse --show-toplevel)"
+		cd "$(git root)"
 		\ls -lah .git/objects/pack
 		find .git/objects
 		git rp

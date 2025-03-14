@@ -41,6 +41,7 @@
 			git gc --cruft --max-cruft-size=10m --prune=now; \
 			git repack --cruft --cruft-expiration=now -d --max-pack-size=10m --max-cruft-size=10m; \
 		}; f"
+	root = rev-parse --show-toplevel
 [push]
 	autoSetupRemote = true
 [pull]
