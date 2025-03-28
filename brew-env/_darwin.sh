@@ -45,6 +45,7 @@ brew install --force --overwrite \
 	helm \
 	html-xml-utils \
 	telnet \
+	battery \
 #	mobile-shell \
 #	govc \
 #	libyubikey ykpers pam_yubico pam-u2f \
@@ -95,6 +96,8 @@ brew install --cask --force \
 	haraguroicha/brew/caffeine-app \
 	tg-pro \
 	virtualbuddy@beta \
+	lihaoyun6/tap/airbattery \
+	rsyncui \
 #	coconutbattery \
 #	macpass \
 #	shimo \
