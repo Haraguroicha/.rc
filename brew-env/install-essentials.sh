@@ -12,6 +12,10 @@ PWD=$( cd "$( dirname "$0" )" && pwd )
 
 brew analytics off
 
+brew install lescanauxdiscrets/tap/zvbi
+brew tap homebrew-ffmpeg/ffmpeg
+brew install homebrew-ffmpeg/ffmpeg/ffmpeg $(brew options homebrew-ffmpeg/ffmpeg/ffmpeg | grep -vE '\s' | grep --color=never -- '--with-' | grep -viE 'lib(flite|flite)' | grep -viE '(openvino|decklink)' | tr '\n' ' ')
+
 # install for both of Darwin and Linux used packages
 brew install xz ansifilter most fzf sheldon fswatch zsh bash gping \
 	diff-so-fancy direnv mtr ncdu git jq yq go hugo goenv bat \
