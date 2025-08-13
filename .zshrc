@@ -154,6 +154,9 @@ unset _UNAME
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+[[ "${_SET_RC}" == "1" ]] && source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
+unset _SET_RC
+
 function check_iterm2_shell_integration() {
 	[ ! -e "${HOME}/.iterm2_shell_integration.zsh" ] && curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -162,8 +165,7 @@ function check_iterm2_shell_integration() {
 [ "${TERM_PROGRAM}" = "iTerm.app" ] && check_iterm2_shell_integration
 unset check_iterm2_shell_integration
 
-[[ "${_SET_RC}" == "1" ]] && source "$(dirname $(readlink ~/.zshrc))/.local.zshrc"
-unset _SET_RC
+test -e "$(dirname $(readlink ~/.zshrc))/.shellfishrc" && source "$(dirname $(readlink ~/.zshrc))/.shellfishrc"
 
 # Enable by uncomment following line to print the trace init load performance output
 #zprof
