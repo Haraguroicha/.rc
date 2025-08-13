@@ -42,6 +42,8 @@
 			git repack --cruft --cruft-expiration=now -d --max-pack-size=10m --max-cruft-size=10m; \
 		}; f"
 	root = rev-parse --show-toplevel
+	untrack = update-index --assume-unchanged
+	retrack = update-index --no-assume-unchanged
 [push]
 	autoSetupRemote = true
 [pull]
