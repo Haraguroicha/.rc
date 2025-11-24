@@ -71,7 +71,7 @@ brew install --cask --force \
 	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
 	alfred \
 	jordanbaird-ice \
-	iterm2 \
+	iterm2 itermbrowserplugin \
 	istat-menus \
 	wireshark \
 	gpg-suite-no-mail \
