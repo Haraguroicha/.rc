@@ -12,9 +12,13 @@ PWD=$( cd "$( dirname "$0" )" && pwd )
 
 brew analytics off
 
+brew trust lescanauxdiscrets/tap
 brew install lescanauxdiscrets/tap/zvbi
-brew tap homebrew-ffmpeg/ffmpeg
+
+brew trust homebrew-ffmpeg/ffmpeg
 brew install homebrew-ffmpeg/ffmpeg/ffmpeg $(brew options homebrew-ffmpeg/ffmpeg/ffmpeg | grep -vE '\s' | grep --color=never -- '--with-' | grep -viE 'lib(flite|flite)' | grep -viE '(openvino|decklink)' | tr '\n' ' ')
+
+brew trust oven-sh/bun topcheer/sshpass teamookla/speedtest hashicorp/tap
 
 # install for both of Darwin and Linux used packages
 brew install xz ansifilter most fzf sheldon fswatch zsh bash gping \
@@ -26,6 +30,7 @@ brew install xz ansifilter most fzf sheldon fswatch zsh bash gping \
 	topcheer/sshpass/sshpass teamookla/speedtest/speedtest bx \
 	nvm bash-git-prompt exiftool duf dialog fastfetch trippy \
 	pyenv ffmpeg nmap tree autoconf automake \
+	hashicorp/tap/terraform hashicorp/tap/vault \
 
 # Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
 mkdir -p ~/.docker/cli-plugins

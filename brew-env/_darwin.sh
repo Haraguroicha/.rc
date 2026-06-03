@@ -16,6 +16,8 @@ fi
 
 brew install --cask macfuse
 
+brew trust brettferdosi/tap haraguroicha/brew lihaoyun6/tap gcenx/wine
+
 brew install --force --overwrite \
 	openssl \
 	mas \
@@ -41,11 +43,12 @@ brew install --force --overwrite \
 	gnupg2 \
 	pinentry-mac \
 	iproute2mac \
-	podman podman-desktop \
-	helm \
-	html-xml-utils \
 	telnet \
 	battery \
+	podman \
+#	podman-desktop \
+#	helm \
+#	html-xml-utils \
 #	mobile-shell \
 #	govc \
 #	libyubikey ykpers pam_yubico pam-u2f \
@@ -66,9 +69,11 @@ brew install --cask --force \
 	aerial \
 	1password 1password-cli \
 	google-chrome google-chrome@beta \
+	google-drive \
 	firefox \
 	visual-studio-code \
 	microsoft-word microsoft-powerpoint microsoft-excel microsoft-outlook \
+	windows-app \
 	alfred \
 	jordanbaird-ice \
 	iterm2 itermbrowserplugin \
@@ -78,18 +83,15 @@ brew install --cask --force \
 	mattermost \
 	discord \
 	iina \
-	google-drive \
 	parallels \
 	adobe-creative-cloud \
 	telegram telegram-desktop \
 	gcenx/wine/kegworks \
-	nrlquaker-winbox \
 	android-platform-tools \
 	canon-eos-utility \
 	WebPQuickLook \
-	qlstephen qlmarkdown quicklook-json betterzip qlimagesize suspicious-package apparency qlvideo \
+	betterzip qlimagesize suspicious-package apparency qlvideo \
 	sony-ps-remote-play \
-	microsoft-remote-desktop \
 	keka \
 	uninstallpkg \
 	choosy \
@@ -97,7 +99,10 @@ brew install --cask --force \
 	tg-pro \
 	virtualbuddy@beta \
 	lihaoyun6/tap/airbattery \
-	rsyncui \
+#	nrlquaker-winbox \
+#	qlstephen qlmarkdown quicklook-json \
+#	rsyncui \
+#	microsoft-remote-desktop \
 #	coconutbattery \
 #	macpass \
 #	shimo \
@@ -116,9 +121,9 @@ if [ "${AppleM}" == "0" ]; then
 
 fi
 
-brew install --cask --force --no-quarantine \
-	via qmk-toolbox
+#brew install --cask --force \
+#	via qmk-toolbox
 
-brew install ruby@3.0
+brew install ruby@3.4
 # install ipa tool
-$(brew --prefix ruby@3.0)/bin/gem install shenzhen
+$(brew --prefix ruby@3.4)/bin/gem install shenzhen

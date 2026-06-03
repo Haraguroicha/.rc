@@ -3,6 +3,8 @@ set -Eeou pipefail
 
 [[ -x "$(which apt)" ]] && sudo apt install -y --auto-remove build-essential procps curl file git zsh
 
+brew trust homebrew/linux-fonts
+
 brew install \
 	homebrew/linux-fonts/font-hack-nerd-font \
 	homebrew/linux-fonts/font-jf-open-huninn \
