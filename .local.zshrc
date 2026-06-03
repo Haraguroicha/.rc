@@ -156,6 +156,7 @@ function snow(){
 #source /opt/asn
 
 #[[ -d "$HOME/.cargo/bin" ]] && export PATH=$HOME/.cargo/bin:$PATH
-[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+#[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+[[ -d "$(brew --prefix rustup)" ]] && export PATH="$(brew --prefix rustup)/bin:$PATH"
 
 source "$(dirname $(readlink ~/.zshrc))/.customize.zshrc"
